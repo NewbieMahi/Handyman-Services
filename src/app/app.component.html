@@ -1,5 +1,5 @@
 <mat-toolbar>
-  <span>My App</span>
+  <a routerLink='/' class="toolbar-item"> <span>Handyman Services</span></a>
   <span class="example-spacer"></span>
   <a routerLink='/service-component' class="toolbar-item" routerLinkActive="active">Service</a>
   <a [matMenuTriggerFor]="menu" class="toolbar-item">Register</a>
@@ -7,7 +7,7 @@
     <a routerLink='/user-register' mat-menu-item>User</a>
     <a routerLink='/worker-register' mat-menu-item>Worker</a>
   </mat-menu>
-  <a routerLink='/login' class="toolbar-item">Login/Sign In</a>
+  <a routerLink='/login' class="toolbar-item">Login</a>
 </mat-toolbar>
 <router-outlet></router-outlet>
 
