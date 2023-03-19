@@ -1,0 +1,155 @@
+/* Global styles */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-color: #f1f1f1;
+}
+.title {
+  text-align: center;
+}
+
+
+/* Login page styles */
+
+.container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center;
+  height: 100vh; */
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 400px;
+}
+
+/* .title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333333;
+} */
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.form-control {
+  background-color: #f8f8f8;
+  border: none;
+  border-radius: 5px;
+  box-shadow: none;
+  font-size: 16px;
+  padding: 15px;
+  width: 100%;
+}
+
+.password-toggle {
+  color: #a0a0a0;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 47px;
+}
+
+/* .btn {
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px;
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+} */
+/* 
+.btn-primary {
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.btn-secondary {
+  background-color: #f8f8f8;
+  border: 2px solid #007bff;
+  color: #007bff;
+}
+
+.btn-secondary:hover {
+  background-color: #007bff;
+  color: #fff;
+} */
+
+.forgot-password {
+  color: #a0a0a0;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: right;
+}
+
+.forgot-password:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.register-link {
+  color: #007bff;
+  font-weight: bold;
+  margin-left: 5px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.register-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Responsive styles */
+
+@media only screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+}
+
+.register-button {
+  float: left;
+  margin-right: 10px;
+}
+
+.login-message {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-button {
+  margin-left: 5px;
+}

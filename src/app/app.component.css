@@ -1,0 +1,16 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.toolbar-item{
+    padding-left: 50px;
+}
+.toolbar-item{
+  color:white;
+  text-decoration: none;
+}
+mat-menu-item{
+   color:Blue;
+}
+mat-toolbar{
+ background-color: #00ccff;
+}

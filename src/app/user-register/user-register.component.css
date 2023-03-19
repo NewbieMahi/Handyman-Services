@@ -1,0 +1,60 @@
+.title {
+  text-align: center;
+}
+
+.registration-container {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* height: 100vh; */
+}
+
+.card {
+  width: 400px;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  margin-top: 0;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.form-col {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+.password-toggle {
+  cursor: pointer;
+}
+
+.register-button {
+  float: left;
+  margin-right: 10px;
+}
+
+.login-message {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-button {
+  margin-left: 5px;
+}

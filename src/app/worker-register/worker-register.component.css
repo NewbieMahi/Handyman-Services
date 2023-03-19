@@ -1,0 +1,91 @@
+/* Center the form horizontally and vertically */
+.title {
+  text-align: center;
+}
+form {
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  /* height: 100vh; */
+}
+
+/* Style the card */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 500px;
+}
+
+/* Style the title */
+/* .title {
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+} */
+
+/* Style the input fields */
+.mat-form-field {
+  width: 100%;
+}
+
+input.mat-input-element {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+}
+
+input.mat-input-element:focus {
+  outline: none;
+}
+
+/* Style the error messages */
+.mat-error {
+  color: #f44336;
+  font-size: 14px;
+}
+
+/* Style the buttons */
+/* .btn {
+  border-radius: 5px;
+  font-size: 16px;
+  margin: 10px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #2196f3;
+  color: #fff;
+} */
+
+/* Align the Register and Login buttons */
+/* div > button.btn {
+  float: left;
+}
+
+div > span > button.btn {
+  margin-left: 10px;
+} */
+.password-toggle {
+  cursor: pointer;
+}
+
+.register-button {
+  float: left;
+  margin-right: 10px;
+}
+
+.login-message {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login-button {
+  margin-left: 5px;
+}

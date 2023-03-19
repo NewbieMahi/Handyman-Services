@@ -1,0 +1,29 @@
+img{
+    height: 200px;
+}
+.container{
+width: 1000px;
+ justify-content: center;
+ text-align: center;
+}
+.outer-card{
+text-align: center;
+padding-left: 25px; 
+ padding-right:24px ;
+padding-top: 50px;
+padding-bottom: 30px;
+}
+.card{
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.btn{
+   width: 14rem;
+   font-weight: 600;
+   font-size:0.9rem;
+background-color:#164889;
+ color:white;
+}
+.video-fluid {
+   width: 100%;
+   height: auto;
+ }
