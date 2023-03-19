@@ -21,6 +21,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { SliderComponent } from './slider/slider.component';
 import { PlumberComponent } from './plumber/plumber.component';
 import { SinglePlumberComponent } from './single-plumber/single-plumber.component';
+
+import { GoogleMapComponent } from './google-map/google-map.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -34,7 +36,8 @@ import { SinglePlumberComponent } from './single-plumber/single-plumber.componen
     LoginComponent,
     SliderComponent,
     PlumberComponent,
-    SinglePlumberComponent
+    SinglePlumberComponent,
+    GoogleMapComponent
   ],
   imports: [
     // CarouselModule.forRoot(),
