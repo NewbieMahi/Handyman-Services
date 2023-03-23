@@ -32,10 +32,10 @@ form {
 }
 
 input.mat-input-element {
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
   border-radius: 5px;
   border: none;
-  padding: 10px;
+  /* padding: 10px; */
 }
 
 input.mat-input-element:focus {

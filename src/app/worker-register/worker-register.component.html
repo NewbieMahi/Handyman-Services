@@ -47,6 +47,19 @@
           <mat-icon matSuffix class="password-toggle" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </mat-form-field>
         </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Address">
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Price/hour">
+          </mat-form-field>
+        </div>
+      </div>
         <div class="col">
           <mat-form-field class="example-full-width">
             <mat-label>Services you offered</mat-label>
@@ -55,7 +68,7 @@
             </mat-select>
           </mat-form-field>
         </div>
-      </div>
+   
       <div class="form-row">
         <button class="btn register-button" mat-raised-button color="primary">Register</button>
         <span class="login-message">Already have an account? <button class="btn login-button" mat-stroked-button

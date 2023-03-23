@@ -18,11 +18,13 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
 import { SliderComponent } from './slider/slider.component';
 import { PlumberComponent } from './plumber/plumber.component';
 import { SinglePlumberComponent } from './single-plumber/single-plumber.component';
 
 import { GoogleMapComponent } from './google-map/google-map.component';
+import { PaymentComponent } from './payment/payment.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -37,7 +39,8 @@ import { GoogleMapComponent } from './google-map/google-map.component';
     SliderComponent,
     PlumberComponent,
     SinglePlumberComponent,
-    GoogleMapComponent
+    GoogleMapComponent,
+    PaymentComponent
   ],
   imports: [
     // CarouselModule.forRoot(),
@@ -46,6 +49,7 @@ import { GoogleMapComponent } from './google-map/google-map.component';
     MatIconModule,
     MatToolbarModule,
     MatMenuModule,
+    MatRadioModule,
     BrowserAnimationsModule,
     RoutingModule,
     NgbModule,
