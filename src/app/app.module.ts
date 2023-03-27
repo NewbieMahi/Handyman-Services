@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
-import { ServicesComponent } from './services/services.component';
+import { ServicesComponent } from './home-services/services.component';
 import { RoutingModule } from './routing.module';
 import { UserRegisterComponent } from './user-register/user-register.component';
 import { WorkerRegisterComponent } from './worker-register/worker-register.component';
