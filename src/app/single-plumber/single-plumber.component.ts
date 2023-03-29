@@ -8,13 +8,13 @@ declare var Razorpay: any;
 export class SinglePlumberComponent implements OnInit {
   setupRazorpay() {
     const options = {
-      "key": "rzp_test_nfj6eLa0dG0UO0",
+      "key": "rzp_test_kF9SntPGkbmQjf",
       "amount": "10000",
       "currency": "INR",
-      "name": "Handyman Services Karad",
+      "name": "Handyman Service",
       "description": "Pay & Book your worker",
       "image": "https://tse4.mm.bing.net/th?id=OIP.hNDFGMar6YOB3lfEGPsOXAHaHa&pid=Api&P=0",
-      "order_id": "order_LT5hRLXWZz2CL9",
+      "order_id": "order_LXDvZtXclSsNGS",
       "handler": (response:any) => {
         console.log(response);
         alert("This step of Payment Succeeded");

@@ -1,24 +1,24 @@
 <h2 class="title">Worker Registration</h2>
-<form [formGroup]="signin">
+<form [formGroup]="signin" (ngSubmit)="registerWorker()">
   <div style="display: flex; justify-content: center; align-items: center;">
     <div class="card">
       <h3 class="title">Worker Registration</h3>
       <div class="row">
         <div class="col">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Name">
+            <input matInput placeholder="Name" formControlName="name">
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Worker Id">
+            <input matInput placeholder="Worker Id" formControlName="workerId">
           </mat-form-field>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
+            <input matInput placeholder="Email"  [errorStateMatcher]="matcher" formControlName="email">
 
             <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
               Please enter a valid email address
@@ -30,7 +30,7 @@
         </div>
         <div class="col">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Phone Number">
+            <input matInput placeholder="Phone Number" formControlName="mobileNumber">
           </mat-form-field>
         </div>
       </div>
@@ -43,7 +43,7 @@
         </div>
         <div class="col">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Confirm Password"[type]="hide ? 'password' : 'text'" formControlName="password" required>
+            <input matInput placeholder="Confirm Password"[type]="hide ? 'password' : 'text'" formControlName="confirmPassword" required>
           <mat-icon matSuffix class="password-toggle" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
           </mat-form-field>
         </div>
@@ -51,26 +51,26 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Address">
+            <input matInput placeholder="Address" formControlName="address">
           </mat-form-field>
         </div>
         <div class="col">
           <mat-form-field class="example-full-width">
-            <input matInput placeholder="Price/hour">
+            <input matInput placeholder="Price/hour" formControlName="price">
           </mat-form-field>
         </div>
       </div>
         <div class="col">
           <mat-form-field class="example-full-width">
             <mat-label>Services you offered</mat-label>
-            <mat-select multiple>
-              <mat-option *ngFor="let service of services" [value]="service">{{service}}</mat-option>
+            <mat-select multiple formControlName="services">
+              <mat-option *ngFor="let service of services" [value]="service" >{{service}}</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
    
       <div class="form-row">
-        <button class="btn register-button" mat-raised-button color="primary">Register</button>
+        <button class="btn register-button" mat-raised-button color="primary" (click)="registerWorker()">Register</button>
         <span class="login-message">Already have an account? <button class="btn login-button" mat-stroked-button
             color="primary">Login here</button></span>
       </div>

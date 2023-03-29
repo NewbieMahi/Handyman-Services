@@ -23,6 +23,7 @@ import { SliderComponent } from './slider/slider.component';
 import { PlumberComponent } from './plumber/plumber.component';
 import { SinglePlumberComponent } from './single-plumber/single-plumber.component';
 import { UserService } from './user.service';
+import { WorkerService } from './worker.service';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { PaymentComponent } from './payment/payment.component';
@@ -65,6 +66,7 @@ import { PaymentComponent } from './payment/payment.component';
   ],
   providers: [
     UserService,
+    WorkerService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]
