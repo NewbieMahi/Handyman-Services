@@ -27,6 +27,7 @@ import { WorkerService } from './worker.service';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { PaymentComponent } from './payment/payment.component';
+import { AuthService } from './auth.service';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -67,6 +68,7 @@ import { PaymentComponent } from './payment/payment.component';
   providers: [
     UserService,
     WorkerService,
+    AuthService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]

@@ -45,7 +45,7 @@ emailFormControl = new FormControl('', [
     
     this.userService.register(formData.name,formData.workerId, formData.email, formData.mobileNumber, formData.password, formData.confirmPassword, formData.address, formData.price, formData.services)
     .subscribe(
-      response => console.log('User registration successful:', response),
+      response => console.log('Worker registration successful:', response),
       error => console.error('Error registering user:', error)
     );
     
