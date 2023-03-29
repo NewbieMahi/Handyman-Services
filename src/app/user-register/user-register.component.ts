@@ -32,8 +32,11 @@ emailFormControl = new FormControl('', [
 
   matcher = new MyErrorStateMatcher();
    signin: FormGroup = new FormGroup({
+    name: new FormControl('',[Validators.required ]),
     email: new FormControl('', [Validators.email, Validators.required ]),
-    password: new FormControl('', [Validators.required, Validators.min(3) ])
+    mobileNumber: new FormControl('',[Validators.required ]),
+    password: new FormControl('', [Validators.required, Validators.min(3) ]),
+    confirmPassword: new FormControl('',[Validators.required ])
   });
   hide = true;
   get emailInput() { return this.signin.get('email'); }
@@ -41,20 +44,14 @@ emailFormControl = new FormControl('', [
   constructor(@Inject(forwardRef(() => UserService)) private userService: UserService) { }
 
   registerUser() {
-    const userData = {
-       name:this.name,
-       email:this.email,
-       mobileNumber:this.mobileNumber,
-       password:this.password,
-       confirmPassword:this.confirmPassword
-
-    }
     
-    this.userService.register(this.name, this.email, this.mobileNumber, this.password, this.confirmPassword)
-      .subscribe(
-        response => console.log('User registration successful:', response),
-        error => console.error('Error registering user:', error)
-      );
+    const formData = this.signin.value;
+    this.userService.register(formData.name, formData.email, formData.mobileNumber, formData.password, formData.confirmPassword)
+    .subscribe(
+      response => console.log('User registration successful:', response),
+      error => console.error('Error registering user:', error)
+    );
+    
   }
 
   ngOnInit(): void {

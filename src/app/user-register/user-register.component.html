@@ -4,7 +4,7 @@
   <div class="card">
     <h3 class="card-title">User Registration</h3>
 
-    <form [formGroup]="signin">
+    <form [formGroup]="signin" (ngSubmit)="registerUser()">
       <div class="form-row">
         <div class="form-col">
           <mat-form-field class="form-field">
