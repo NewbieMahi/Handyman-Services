@@ -22,7 +22,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { SliderComponent } from './slider/slider.component';
 import { PlumberComponent } from './plumber/plumber.component';
 import { SinglePlumberComponent } from './single-plumber/single-plumber.component';
-
+import { UserService } from './user.service';
+import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { PaymentComponent } from './payment/payment.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
@@ -59,9 +60,13 @@ import { PaymentComponent } from './payment/payment.component';
     FormsModule,
     MatButtonModule,
     MatSelectModule,
+    HttpClientModule
     // NgbCarouselModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    HttpClientModule 
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

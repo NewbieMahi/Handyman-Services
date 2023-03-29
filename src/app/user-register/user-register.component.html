@@ -4,54 +4,55 @@
   <div class="card">
     <h3 class="card-title">User Registration</h3>
 
-    <div class="form-row">
-      <div class="form-col">
-        <mat-form-field class="form-field">
-          <input matInput placeholder="Name">
-        </mat-form-field>
+    <form [formGroup]="signin">
+      <div class="form-row">
+        <div class="form-col">
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+        </div>
+
+        <div class="form-col">
+
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error class="error-message" *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error class="error-message" *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-col">
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Phone Number" formControlName="mobileNumber">
+          </mat-form-field>
+        </div>
       </div>
 
-      <div class="form-col">
-
-        <mat-form-field class="form-field">
-          <input matInput placeholder="Email" [formControl]="emailFormControl" [errorStateMatcher]="matcher">
-
-          <mat-error class="error-message" *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-            Please enter a valid email address
-          </mat-error>
-          <mat-error class="error-message" *ngIf="emailFormControl.hasError('required')">
-            Email is <strong>required</strong>
-          </mat-error>
-        </mat-form-field>
+      <div class="form-row">
+        <div class="form-col">
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password"
+              required>
+            <mat-icon matSuffix class="password-toggle" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="form-col">
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Confirm Password" [type]="hide ? 'password' : 'text'" formControlName="confirmPassword"
+              required>
+            <mat-icon matSuffix class="password-toggle" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </mat-form-field>
+        </div>
       </div>
-      <div class="form-col">
-        <mat-form-field class="form-field">
-          <input matInput placeholder="Phone Number">
-        </mat-form-field>
-      </div>
-    </div>
 
-    <div class="form-row">
-      <div class="form-col">
-        <mat-form-field class="form-field">
-          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password"
-            required>
-          <mat-icon matSuffix class="password-toggle" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </mat-form-field>
+      <div class="form-row">
+        <button class="btn register-button" mat-raised-button color="primary" (click)="registerUser()">Register</button>
+        <span class="login-message">Already have an account? <button class="btn login-button" mat-stroked-button
+            color="primary">Login here</button></span>
       </div>
-      <div class="form-col">
-        <mat-form-field class="form-field">
-          <input matInput placeholder="Confirm Password" [type]="hide ? 'password' : 'text'" formControlName="password"
-            required>
-          <mat-icon matSuffix class="password-toggle" (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </mat-form-field>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <button class="btn register-button" mat-raised-button color="primary">Register</button>
-      <span class="login-message">Already have an account? <button class="btn login-button" mat-stroked-button
-          color="primary">Login here</button></span>
-    </div>
+    </form>
   </div>
 </div>

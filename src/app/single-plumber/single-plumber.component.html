@@ -1,86 +1,53 @@
-<div class="container">
-  <h1 style="text-align: center;"> Plumber</h1>
-  <div class="outer-card card">
-
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem;">
-          <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
-          <div class="card-body">
-
-            <p class="card-text">Plumber Name: John Smith<br>
-              Review: ⭐⭐⭐<br>
-              <button class="btn" id="pay-button">Book Now</button>
-
-            </p>
+<html>
+  <body>
+    
+    <div class="container">
+      <h1 style="text-align: center;"> Plumber</h1>
+      <div class="outer-card card">
+    
+        <div class="row">
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
+              <div class="card-body">
+    
+                <p class="card-text">Plumber Name: John Smith<br>
+                  Review: ⭐⭐⭐<br>
+                  <button class="btn" id="pay-button">Book Now</button>
+    
+                </p>
+              </div>
+    
+            </div>
           </div>
-
-        </div>
-      </div>
-
-      <div class="col">
+    
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <p><b>Price :</b>  100₹ /Hr <br>
+                <b>Availability:</b> Available <br>
+    
+                <b>Address : Karad </b> <a routerLink='/google-map' href="">View on map</a>
+                <br><B>Phone Number: </B>908080808
+              </p>
+    
+            </div>
+          </div>
+          <div class="col">
         <div class="card" style="width: 18rem;">
-          <p><b>Price :</b>  100₹ /Hr <br>
-            <b>Availability:</b> Available <br>
-
-            <b>Address : Karad </b> <a routerLink='/google-map' href="">View on map</a>
-            <br><B>Phone Number: </B>908080808
-          </p>
-
+          <video class="video-fluid z-depth-1" autoplay loop controls muted>
+            <source src="../../assets/img/plumbing.mp4" type="video/mp4" />
+        </video>
+             
+              <!-- <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap"> -->
+          </div> 
+          
+          </div>
         </div>
-      </div>
-      <div class="col">
-    <div class="card" style="width: 18rem;">
-      <video class="video-fluid z-depth-1" autoplay loop controls muted>
-        <source src="../../assets/img/plumbing.mp4" type="video/mp4" />
-    </video>
-         
-          <!-- <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap"> -->
-      </div> 
-      
       </div>
     </div>
-  </div>
-</div>
+    
+    
 
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-<script>
-var options = {
-	"key": "rzp_test_s7vM1uM7h0YxhR",
-	"amount": "10000",
-	"currency": "INR",
-	"name": "Handyman Services Karad",
-	"description": "Pay & Book your worker",
-		"image": "https://tse4.mm.bing.net/th?id=OIP.hNDFGMar6YOB3lfEGPsOXAHaHa&pid=Api&P=0",
-	"order_id": "order_LT5hRLXWZz2CL8",
-	"handler": function (response){
-		console.log(response)
-		alert("This step of Payment Succeeded");
-	},
-	"prefill": {
-		//Here we are prefilling random contact
-		"contact":"9359614993",
-		//name and email id, so while checkout
-		"name": "Mahesh Thorat",
-		"email": "mahithorat249@gmail.com"
-	},
-	"notes" : {
-		"description":"Book your handyman using secure payment",
+  </body>
+</html>
 
-	},
-	"theme": {
-		"color": "#2300a3"
-	}
-};
-var razorpayObject = new Razorpay(options);
-console.log(razorpayObject);
-razorpayObject.on('payment.failed', function (response){
-		console.log(response);
-		alert("This step of Payment Failed");
-});
-	
-document.getElementById('pay-button').onclick = function(e){
-	razorpayObject.open();
-	e.preventDefault();
-}
-</script>
