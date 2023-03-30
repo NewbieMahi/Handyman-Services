@@ -1,3 +1,9 @@
+<!-- <div *ngFor="let worker of workers">
+  <h2>{{worker.name}}</h2>
+  <p>{{worker.job}}</p>
+  <p>{{worker.location}}</p>
+</div> -->
+
 <div class="container justify-content-center">
   <h1 style="text-align: center;">OUR SERVICES</h1>
   <div class="outer-card card">
@@ -8,7 +14,7 @@
             <img class="card-img-top" src="../../../assets/img/carcare.png" alt="Card image cap" />
           </div>
           <div class="card-body text-center">
-            <a href="" class="btn">Car & Bike Services</a>
+            <a  routerLink='/Carrepair' href="" class="btn" (click)="getAllService('Car & Bike Repair')">Car & Bike Services</a>
           </div>
         </div>
       </div>
@@ -18,7 +24,7 @@
             <img class="card-img-top" src="../../../assets/img/carpenter.png" alt="Card image cap" />
           </div>
           <div class="card-body text-center">
-            <a href="" class="btn">Carpenter</a>
+            <a routerLink='/Carpentar' href="" class="btn" (click)="getAllService('Carpentar')">Carpenter</a>
           </div>
         </div>
       </div>
@@ -28,7 +34,7 @@
             <img class="card-img-top" src="../../../assets/img/cleaning.png" alt="Card image cap" />
           </div>
           <div class="card-body text-center">
-            <a href="" class="btn">Cleaning</a>
+            <a routerLink='/Cleaner' href="" class="btn" (click)="getAllService('Cleaner')">Cleaning</a>
           </div>
         </div>
       </div>
@@ -38,7 +44,7 @@
             <img class="card-img-top" src="../../../assets/img/electrician.png" alt="Card image cap" />
           </div>
           <div class="card-body text-center">
-            <a href="" class="btn">Electrician</a>
+            <a routerLink='/Electrician' href="" class="btn" (click)="getAllService('Electrician')">Electrician</a>
           </div>
         </div>
       </div>
@@ -48,7 +54,7 @@
             <img class="card-img-top" src="../../../assets/img/painting.png" alt="Card image cap" />
           </div>
           <div class="card-body text-center">
-            <a href="" class="btn">Painting</a>
+            <a routerLink='/painter' href="" class="btn" (click)="getAllService('painter')">Painting</a>
           </div>
         </div>
       </div>
@@ -58,7 +64,7 @@
             <img class="card-img-top" src="../../../assets/img/plumber.png" alt="Card image cap" />
           </div>
           <div class="card-body text-center">
-            <a routerLink='/plumber' href="" class="btn">Plumber</a>
+            <a routerLink='/plumber' href="" class="btn" (click)="getAllService('Plumber')">Plumber</a>
           </div>
         </div>
       </div>

@@ -28,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AuthService } from './auth.service';
+import { AllServiceService } from './all-service.service';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -69,6 +70,7 @@ import { AuthService } from './auth.service';
     UserService,
     WorkerService,
     AuthService,
+    AllServiceService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]
