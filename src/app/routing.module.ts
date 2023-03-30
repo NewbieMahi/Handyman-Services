@@ -8,8 +8,12 @@ import { LoginComponent } from './login/login.component';
 import { SliderComponent } from './slider/slider.component';
 import { PlumberComponent } from './plumber/plumber.component';
 import { CarpentarComponent } from './carpentar/carpentar.component';
+import { ElecticianComponent } from './electician/electician.component';
+import { CarsComponent } from './cars/cars.component';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { SinglePlumberComponent } from './single-plumber/single-plumber.component';
+import { CleaningComponent } from './cleaning/cleaning.component';
+import { PainterComponent } from './painter/painter.component';
 
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
@@ -19,6 +23,10 @@ const routes: Routes = [
   { path:'', component:SliderComponent},
   { path:'plumber', component:PlumberComponent},
   { path:'carpentar', component:CarpentarComponent},
+  { path:'electrician', component:ElecticianComponent},
+  { path:'carrepair', component: CarsComponent},
+  { path:'cleaner', component: CleaningComponent},
+  { path:'painter', component: PainterComponent},
   { path:'single-plumber', component:SinglePlumberComponent},
   { path:'google-map',component:GoogleMapComponent}
 
