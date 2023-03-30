@@ -22,6 +22,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { SliderComponent } from './slider/slider.component';
 import { PlumberComponent } from './plumber/plumber.component';
 import { SinglePlumberComponent } from './single-plumber/single-plumber.component';
+import { CarpentarComponent } from './carpentar/carpentar.component';
 import { UserService } from './user.service';
 import { WorkerService } from './worker.service';
 import { HttpClientModule } from '@angular/common/http';
@@ -43,6 +44,7 @@ import { AllServiceService } from './all-service.service';
     SliderComponent,
     PlumberComponent,
     SinglePlumberComponent,
+    CarpentarComponent,
     GoogleMapComponent,
     PaymentComponent
   ],

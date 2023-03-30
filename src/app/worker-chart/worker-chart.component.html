@@ -1,0 +1,22 @@
+<!-- workers.component.html -->
+
+<h2>Workers</h2>
+
+<!-- Service chart -->
+<div class="chart-container">
+  <canvas baseChart
+          [data]="serviceData"
+          [labels]="serviceLabels"
+          [chartType]="serviceChartType">
+  </canvas>
+</div>
+
+<!-- Count chart -->
+<div class="chart-container">
+  <canvas baseChart
+          [data]="countData"
+          [labels]="countLabels"
+          [chartType]="countChartType"
+          [options]="countOptions">
+  </canvas>
+</div>

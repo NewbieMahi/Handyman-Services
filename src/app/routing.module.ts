@@ -7,6 +7,7 @@ import { WorkerRegisterComponent } from './worker-register/worker-register.compo
 import { LoginComponent } from './login/login.component';
 import { SliderComponent } from './slider/slider.component';
 import { PlumberComponent } from './plumber/plumber.component';
+import { CarpentarComponent } from './carpentar/carpentar.component';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { SinglePlumberComponent } from './single-plumber/single-plumber.component';
 
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'login', component:LoginComponent},
   { path:'', component:SliderComponent},
   { path:'plumber', component:PlumberComponent},
+  { path:'carpentar', component:CarpentarComponent},
   { path:'single-plumber', component:SinglePlumberComponent},
   { path:'google-map',component:GoogleMapComponent}
 
