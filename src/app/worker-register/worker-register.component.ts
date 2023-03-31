@@ -16,7 +16,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./worker-register.component.css']
 })
 export class WorkerRegisterComponent implements OnInit {
-  services: string[] = ['Plumber', 'Electrician', 'Carpentar','Cleaner','Painter','Car & Bike Repair'];
+  services: string[] = ['Plumber', 'Electrician', 'Carpentar','Cleaner','Painter','Mechanic'];
 emailFormControl = new FormControl('', [
     Validators.required,
     Validators.email,
