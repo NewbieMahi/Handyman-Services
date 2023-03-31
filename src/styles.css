@@ -8,3 +8,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 h2{
     padding-top: 10px;
 }
+
+ /*
+ .goog-logo-link{
+    color: transparent !important;
+    display: none;
+ } */
+
+.goog-te-gadget .goog-te-combo {
+    font-weight: 510;
+}
+
