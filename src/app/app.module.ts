@@ -29,6 +29,7 @@ import { CleaningComponent } from './cleaning/cleaning.component';
 import { PainterComponent } from './painter/painter.component';
 import { UserService } from './user.service';
 import { WorkerService } from './worker.service';
+import { WorkerChartService } from './worker-chart.service';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapComponent } from './google-map/google-map.component';
 import { PaymentComponent } from './payment/payment.component';
@@ -81,6 +82,7 @@ import { AllServiceService } from './all-service.service';
     WorkerService,
     AuthService,
     AllServiceService,
+    WorkerChartService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]

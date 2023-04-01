@@ -1,0 +1,22 @@
+.chart-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.title{
+  text-align: center;
+  font-weight: 800px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+canvas {
+  max-width: 700px;
+  max-height: 500px;
+  margin: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 767px) {
+  canvas {
+    max-width: 100%;
+  }
+}

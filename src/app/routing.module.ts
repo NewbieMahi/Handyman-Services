@@ -14,6 +14,7 @@ import { GoogleMapComponent } from './google-map/google-map.component';
 import { SinglePlumberComponent } from './single-plumber/single-plumber.component';
 import { CleaningComponent } from './cleaning/cleaning.component';
 import { PainterComponent } from './painter/painter.component';
+import { WorkerChartComponent } from './worker-chart/worker-chart.component';
 
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path:'cleaner', component: CleaningComponent},
   { path:'painter', component: PainterComponent},
   { path:'single-plumber', component:SinglePlumberComponent},
+  { path:'worker-chart', component: WorkerChartComponent},
   { path:'google-map',component:GoogleMapComponent}
 
 ];

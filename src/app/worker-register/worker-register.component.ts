@@ -22,18 +22,27 @@ emailFormControl = new FormControl('', [
     Validators.email,
   ]);
  signin: FormGroup = new FormGroup({
-  name: new FormControl('',[Validators.required ]),
-  workerId: new FormControl('',[Validators.required ]),
-  email: new FormControl('', [Validators.email, Validators.required ]),
-  mobileNumber: new FormControl('',[Validators.required ]),
-  password: new FormControl('', [Validators.required, Validators.min(3) ]),
-  confirmPassword: new FormControl('',[Validators.required ]),
-  address: new FormControl('',[Validators.required ]),
-  price: new FormControl('',[Validators.required ]),
-  services: new FormControl('',[Validators.required ]),
+  name: new FormControl(''),
+  workerId: new FormControl(''),
+  email: new FormControl(''),
+  mobileNumber: new FormControl(''),
+  password: new FormControl(''),
+  confirmPassword: new FormControl(''),
+  address: new FormControl(''),
+  price: new FormControl(''),
+  services: new FormControl(''),
     
   });
   hide = true;
+  
+  registrationSuccessful = false;
+  registrationErrorMessage = '';
+  isRegistering = false;
+  submitted = true;
+  snackBar: any;
+
+
+
   get emailInput() { return this.signin.get('email'); }
   get passwordInput() { return this.signin.get('password'); }
   matcher = new MyErrorStateMatcher();
@@ -45,8 +54,26 @@ emailFormControl = new FormControl('', [
     
     this.userService.register(formData.name,formData.workerId, formData.email, formData.mobileNumber, formData.password, formData.confirmPassword, formData.address, formData.price, formData.services)
     .subscribe(
-      response => console.log('Worker registration successful:', response),
-      error => console.error('Error registering user:', error)
+      response =>{
+         console.log('Worker registration successful:', response);
+         this.registrationSuccessful = true;
+         this.registrationErrorMessage = '';
+         this.signin.reset();
+         this.submitted = false;
+         this.snackBar.open('User registered successfully', 'Close', {
+           duration: 3000
+         });
+         // Reset validation errors and set form to initial state
+         this.signin.markAsPristine();
+         this.signin.markAsUntouched();
+         Object.keys(this.signin.controls).forEach(key => {
+           this.signin.controls[key].updateValueAndValidity();
+         });
+      },
+      error =>{
+        console.error('Error registering worker:', error);
+        this.registrationErrorMessage = error.message || 'An unknown error occurred';
+      } 
     );
     
   }
