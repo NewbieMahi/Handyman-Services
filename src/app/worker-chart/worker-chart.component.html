@@ -1,17 +1,29 @@
 
 <h2 class="title">Workers Statistics by services</h2>
 <div class="title">
-  <button  (click)="workerChart()">Pie Chart</button>
+  <button class="chart-button" (click)="workerChart()">See Workers by charts</button>
 </div>
 <div class="chart-container">
   <canvas id="pieChart"></canvas>
 </div>
 
 <div class="title">
-   Bar Chart
+   Pie Chart
 </div>
 <div class="chart-container">
   <canvas id="barChart"></canvas>
+</div>
+
+<div class="title">
+  Bar Chart
+</div>
+
+<div class="chart-container">
+  <canvas id="doughnutChart"></canvas>
+</div>
+
+<div class="title">
+  Doughnut Chart
 </div>
 
 

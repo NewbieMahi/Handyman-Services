@@ -78,6 +78,7 @@ export class WorkerChartComponent implements OnInit {
 
   pieChart: any;
   barChart: any;
+  doughnutChart: Chart<"doughnut", unknown[], string> | undefined;
 
   constructor(@Inject(forwardRef(() => WorkerChartService)) private WorkerChartService: WorkerChartService) { 
 }
@@ -147,6 +148,26 @@ export class WorkerChartComponent implements OnInit {
           }
         }
       });
+      // Create doughnut chart
+const doughnutChartData = Object.values(servicesCount);
+const doughnutChartLabels = Object.keys(servicesCount);
+this.doughnutChart = new Chart('doughnutChart', {
+  type: 'doughnut',
+  data: {
+    labels: doughnutChartLabels,
+    datasets: [{
+      data: doughnutChartData,
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.5)',
+        'rgba(54, 162, 235, 0.5)',
+        'rgba(255, 206, 86, 0.5)',
+        'rgba(75, 192, 192, 0.5)',
+        'rgba(153, 102, 255, 0.5)',
+        'rgba(255, 159, 64, 0.5)'
+      ]
+    }]
+  }
+});
     },
     (error: any) => console.error('Error while fetchng workers from database', error)
     );
