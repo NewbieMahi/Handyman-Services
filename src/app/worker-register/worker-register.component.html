@@ -72,7 +72,7 @@
       <div class="form-row">
         <button class="btn register-button" mat-raised-button color="primary" (click)="registerWorker()">Register</button>
         <span class="login-message">Already have an account? <button class="btn login-button" mat-stroked-button
-            color="primary">Login here</button></span>
+            color="primary" routerLink="/login">Login here</button></span>
       </div>
       <div *ngIf="registrationSuccessful" class="alert alert-success" style="margin-top: 5px;">
         Worker registration successful!

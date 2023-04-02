@@ -54,7 +54,7 @@
           <ng-container *ngIf="isRegistering">Registering...</ng-container>
         </button>
         <span class="login-message">Already have an account? <button class="btn login-button" mat-stroked-button
-            color="primary">Login here</button></span>
+            color="primary" routerLink="/login">Login here</button></span>
       </div>
     </form>
     <div *ngIf="isRegistrationSuccessful" class="alert alert-success">
