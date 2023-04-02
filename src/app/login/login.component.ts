@@ -1,6 +1,7 @@
 import { Component, forwardRef, Inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -26,6 +27,12 @@ export class LoginComponent implements OnInit {
     
     
     this.AuthService.login(formData.email,formData.password, formData.userType)
+    .pipe(
+      tap(response => {
+        console.log('Login Successful', response);
+        this.AuthService.currentUser.next(response); // set the currentUser in the AuthService
+      })
+    )
     .subscribe(
       (      response: any) => console.log('Login Successfull', response),
       (      error: any) => console.error('Error while login into system:', error)

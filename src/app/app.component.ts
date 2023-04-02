@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from './auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +8,17 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  currentUser: any;
 
-  title = 'major-project';
+  constructor(private authService: AuthService) {}
+
+  title = 'Handyman';
+  username: string = '';
   ngOnInit() {
 
+    this.authService.currentUser.subscribe(user => {
+      this.currentUser = user;
+    });
     //----------- chatbot's code --------------//
     (function (d, m) {
       var kommunicateSettings = {

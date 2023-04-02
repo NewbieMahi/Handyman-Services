@@ -1,14 +1,20 @@
 <mat-toolbar>
-  <span id="google_translate_element" class="translate_but" ></span>
+  <span id="google_translate_element" class="translate_but"></span>
   <a routerLink='/' class="toolbar-item"> <span>Handyman Services</span></a>
   <span class="example-spacer"></span>
   <a routerLink='/service-component' class="toolbar-item" routerLinkActive="active">Services</a>
-  <a [matMenuTriggerFor]="menu" class="toolbar-item">Register</a>
-  <mat-menu #menu="matMenu">
-    <a routerLink='/user-register' mat-menu-item>User</a>
-    <a routerLink='/worker-register' mat-menu-item>Worker</a>
-  </mat-menu>
-  <a routerLink='/login' class="toolbar-item">Login</a>
+
+  <ng-container *ngIf="!currentUser">
+    <a [matMenuTriggerFor]="menu" class="toolbar-item">Register</a>
+    <mat-menu #menu="matMenu">
+      <a routerLink='/user-register' mat-menu-item>User</a>
+      <a routerLink='/worker-register' mat-menu-item>Worker</a>
+    </mat-menu>
+    <a routerLink='/login' class="toolbar-item">Login</a>
+  </ng-container>
+
+  <ng-container *ngIf="currentUser">
+    <span class="toolbar-item">Welcome {{currentUser.name}}</span>
+  </ng-container>
 </mat-toolbar>
 <router-outlet></router-outlet>
-

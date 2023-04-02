@@ -1,11 +1,12 @@
 import { forwardRef, Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  public currentUser = new BehaviorSubject<any>(null);
 
   private baseUrl = 'http://localhost:5000/api/auth/login';
 
