@@ -8,6 +8,7 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
   currentUser: any;
+ 
 
   constructor(private authService: AuthService) {}
 
@@ -16,6 +17,7 @@ export class AppComponent {
   ngOnInit() {
     this.authService.currentUser.subscribe(user => {
       this.currentUser = user;
+      console.log(user);
     });
 
     //----------- chatbot's code --------------//

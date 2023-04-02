@@ -85,7 +85,11 @@ export class WorkerChartComponent implements OnInit {
   constructor(@Inject(forwardRef(() => WorkerChartService)) private WorkerChartService: WorkerChartService) { 
 }
 
-  workerChart(){
+  // workerChart(){
+   
+  // }
+
+  ngOnInit() {
     this.showCharts = true;
    
     this.WorkerChartService.getWorkers().subscribe(
@@ -176,9 +180,6 @@ this.doughnutChart = new Chart('doughnutChart', {
     (error: any) => console.error('Error while fetchng workers from database', error)
     );
     
-  }
-
-  ngOnInit() {
   }
 
 }

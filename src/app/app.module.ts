@@ -13,7 +13,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { WorkerRegisterComponent } from './worker-register/worker-register.component';
 import { LoginComponent } from './login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatFormFieldModule } from '@angular/material/form-field';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
@@ -37,7 +37,8 @@ import { AuthService } from './auth.service';
 import { AllServiceService } from './all-service.service';
 import { UserTableService } from './user-table.service';
 import { WorkerTableService } from './worker-table.service';
-
+import { MatTableModule } from '@angular/material/table'; // add this import
+import { UserTableComponent } from './user-table/user-table.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -58,7 +59,8 @@ import { WorkerTableService } from './worker-table.service';
     CleaningComponent,
     PainterComponent,
     GoogleMapComponent,
-    PaymentComponent
+    PaymentComponent,
+    UserTableComponent
   ],
   imports: [
     // CarouselModule.forRoot(),
@@ -77,7 +79,9 @@ import { WorkerTableService } from './worker-table.service';
     FormsModule,
     MatButtonModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
+    
     // NgbCarouselModule
   ],
   providers: [
