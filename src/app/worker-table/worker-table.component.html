@@ -1,22 +1,42 @@
-<h2 class="title">All Workers </h2>
-<div class="title">
-  <button  (click)="showAllWorkers()">See all workers</button>
-</div>
-<table class="user-table" >
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone</th>
-    </tr>
-  </thead>
-  <tbody>
-  
-    <tr *ngFor="let user of users">
-     
-      <td>{{ user.name }}</td>
-      <td>{{ user.email }}</td>
-      <td>{{ user.mobileNumber }}</td>
-    </tr>
-  </tbody>
+
+<table class="user-table" mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element; let i = index;"> {{ i+1 }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+    <td mat-cell *matCellDef="let user"> {{ user.name }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="workerid">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Worker ID </th>
+    <td mat-cell *matCellDef="let user"> {{ user.workerId }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+    <td mat-cell *matCellDef="let user"> {{ user.email }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="mobileNumber">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+    <td mat-cell *matCellDef="let user"> {{ user.mobileNumber }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Price/Hour </th>
+    <td mat-cell *matCellDef="let user"> {{ user.price }} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="service">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Services Offered </th>
+    <td mat-cell *matCellDef="let user"> {{ user.services }} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+

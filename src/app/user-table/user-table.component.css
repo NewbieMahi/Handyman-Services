@@ -1,4 +1,4 @@
-.user-table {
+/* .user-table {
     border-collapse: collapse;
     width: 100%;
     max-width: 800px;
@@ -18,4 +18,36 @@
     color: #333;
     font-weight: bold;
   }
-  
+   */
+
+   /* Style for the table */
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Style for table header cells */
+th {
+  font-weight: bold;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  padding: 10px;
+}
+
+/* Style for table data cells */
+td {
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+/* Style for alternating table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style for hover effect on table rows */
+tr:hover {
+  background-color: #e6e6e6;
+  cursor: pointer;
+}
