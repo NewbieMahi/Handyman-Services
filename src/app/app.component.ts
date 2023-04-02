@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -15,10 +14,10 @@ export class AppComponent {
   title = 'Handyman';
   username: string = '';
   ngOnInit() {
-
     this.authService.currentUser.subscribe(user => {
       this.currentUser = user;
     });
+
     //----------- chatbot's code --------------//
     (function (d, m) {
       var kommunicateSettings = {
@@ -37,5 +36,9 @@ export class AppComponent {
     })(document, (window as any).kommunicate || {});
     //----------- chatbot's code end --------------//
 
+  }
+  
+  logout() {
+    this.authService.currentUser.next(null);
   }
 }

@@ -12,6 +12,12 @@
     </mat-menu>
     <a routerLink='/login' class="toolbar-item">Login</a>
   </ng-container>
+  
+  
+  <!-- Add logout button -->
+  <ng-container *ngIf="currentUser">
+    <a routerLink='/login' class="toolbar-item toolbar-button" (click)="logout()">Logout</a>
+  </ng-container>
 
   <ng-container *ngIf="currentUser">
     <span class="toolbar-item">Welcome {{currentUser.name}}</span>
