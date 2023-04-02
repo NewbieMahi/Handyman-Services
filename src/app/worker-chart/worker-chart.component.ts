@@ -76,6 +76,8 @@ import Chart from 'chart.js/auto';
 })
 export class WorkerChartComponent implements OnInit {
 
+  showCharts = false;
+
   pieChart: any;
   barChart: any;
   doughnutChart: Chart<"doughnut", unknown[], string> | undefined;
@@ -84,6 +86,8 @@ export class WorkerChartComponent implements OnInit {
 }
 
   workerChart(){
+    this.showCharts = true;
+   
     this.WorkerChartService.getWorkers().subscribe(
     (response: any) => {
         console.log('Worker fetched successfull', response);
@@ -171,6 +175,7 @@ this.doughnutChart = new Chart('doughnutChart', {
     },
     (error: any) => console.error('Error while fetchng workers from database', error)
     );
+    
   }
 
   ngOnInit() {

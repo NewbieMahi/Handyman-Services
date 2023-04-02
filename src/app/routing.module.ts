@@ -15,6 +15,7 @@ import { SinglePlumberComponent } from './single-plumber/single-plumber.componen
 import { CleaningComponent } from './cleaning/cleaning.component';
 import { PainterComponent } from './painter/painter.component';
 import { WorkerChartComponent } from './worker-chart/worker-chart.component';
+import { UserTableComponent } from './user-table/user-table.component';
 
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
   { path:'painter', component: PainterComponent},
   { path:'single-plumber', component:SinglePlumberComponent},
   { path:'worker-chart', component: WorkerChartComponent},
+  { path: 'all-users', component: UserTableComponent},
   { path:'google-map',component:GoogleMapComponent}
 
 ];

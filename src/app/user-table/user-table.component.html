@@ -1,0 +1,22 @@
+<h2 class="title">All users </h2>
+<div class="title">
+  <button  (click)="showAllUsers()">See all users</button>
+</div>
+<table class="user-table" >
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+  
+    <tr *ngFor="let user of users">
+     
+      <td>{{ user.name }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.mobileNumber }}</td>
+    </tr>
+  </tbody>
+</table>

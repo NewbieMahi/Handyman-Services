@@ -6,7 +6,8 @@
 .title{
   text-align: center;
   font-weight: 800px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: larger;
 }
 canvas {
   max-width: 700px;
@@ -36,4 +37,3 @@ canvas {
 .chart-button:hover {
   background-color: #3e8e41; /* Darker green color on hover */
 }
-

@@ -35,6 +35,8 @@ import { GoogleMapComponent } from './google-map/google-map.component';
 import { PaymentComponent } from './payment/payment.component';
 import { AuthService } from './auth.service';
 import { AllServiceService } from './all-service.service';
+import { UserTableService } from './user-table.service';
+
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -83,6 +85,7 @@ import { AllServiceService } from './all-service.service';
     AuthService,
     AllServiceService,
     WorkerChartService,
+    UserTableService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]
