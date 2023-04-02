@@ -36,6 +36,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { AuthService } from './auth.service';
 import { AllServiceService } from './all-service.service';
 import { UserTableService } from './user-table.service';
+import { WorkerTableService } from './worker-table.service';
 
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -86,6 +87,7 @@ import { UserTableService } from './user-table.service';
     AllServiceService,
     WorkerChartService,
     UserTableService,
+    WorkerTableService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]
