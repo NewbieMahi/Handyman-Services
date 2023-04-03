@@ -25,6 +25,7 @@
     "@ng-bootstrap/ng-bootstrap": "^13.0.0",
     "@popperjs/core": "^2.10.2",
     "@types/chart.js": "^2.9.37",
+    "@types/googlemaps": "^3.43.3",
     "angular-material": "^1.2.5",
     "bootstrap": "^5.2.0",
     "chart.js": "^4.2.1",
