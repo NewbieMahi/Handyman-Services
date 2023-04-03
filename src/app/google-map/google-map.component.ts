@@ -76,7 +76,7 @@ export class GoogleMapComponent implements OnInit {
     if (!window['google']) {
       const script = document.createElement('script');
       script.type = 'text/javascript';
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAdTyoEnepIe9goKZnRFHlzCBabD2bAjQY';
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBkhIXgkHFnbAOGeeQyA3YHtoehv_DH2hk';
       document.body.appendChild(script);
       script.onload = callback;
     } else {
