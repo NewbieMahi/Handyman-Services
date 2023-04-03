@@ -10,8 +10,11 @@ export class GoogleMapComponent implements OnInit {
   map: any;
   geocoder: any;
   @ViewChild('map') mapElement: any;
-  lat = 43.879078;
-  lng = -103.4615581;
+  // lat = 43.879078;
+  // lng = -103.4615581;
+   lat = 28.6139;
+   lng = 77.2090;
+   
   markers = [
     { lat: 17.2878, lng: 74.1737 },
     { lat: 17.2897, lng: 74.1761 },
@@ -42,7 +45,7 @@ export class GoogleMapComponent implements OnInit {
   ngAfterViewInit(): void {
     const mapProperties = {
       center: new google.maps.LatLng(this.lat, this.lng),
-      zoom: 2,
+      zoom: 4,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapProperties);
@@ -67,6 +70,23 @@ export class GoogleMapComponent implements OnInit {
           console.log('Geocoder failed due to: ' + status);
         }
       });
+    });
+  }
+  loadGoogleMaps(callback: () => void) {
+    if (!window['google']) {
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAdTyoEnepIe9goKZnRFHlzCBabD2bAjQY';
+      document.body.appendChild(script);
+      script.onload = callback;
+    } else {
+      callback();
+    }
+  }
+  initMap() {
+    this.map = new google.maps.Map(document.getElementById('map'), {
+      center: { lat: 28.6139, lng: 77.2090 },
+      zoom: 8,
     });
   }
 }
