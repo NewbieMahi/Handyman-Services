@@ -2,6 +2,7 @@ import { Component, forwardRef, Inject } from '@angular/core';
 import { ShippingInfoService } from '../shipping-info.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+declare var Razorpay: any;
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -46,7 +47,55 @@ export class ShippingFormComponent {
     );
     
     }
-
-    ngOnInit(): void {
+    setupRazorpay() {
+      const options = {
+        "key": "rzp_test_kF9SntPGkbmQjf",
+        "amount": "10000",
+        "currency": "INR",
+        "name": "Handyman Service",
+        "description": "Pay & Book your worker",
+        "image": "https://tse4.mm.bing.net/th?id=OIP.hNDFGMar6YOB3lfEGPsOXAHaHa&pid=Api&P=0",
+        "order_id": "order_LXDvZtXclSsNGS",
+        "handler": (response:any) => {
+          console.log(response);
+          alert("This step of Payment Succeeded");
+        },
+        "prefill": {
+          "contact": "9359614993",
+          "name": "Mahesh Thorat",
+          "email": "mahithorat249@gmail.com"
+        },
+        "notes": {
+          "description": "Book your handyman using secure payment",
+        },
+        "theme": {
+          "color": "#2300a3"
+        }
+      };
+    
+      const razorpayObject = new Razorpay(options);
+      console.log(razorpayObject);
+    
+      razorpayObject.on('payment.failed', (response:any) => {
+        console.log(response);
+        alert("This step of Payment Failed");
+      });
+    
+      document.getElementById('pay-button')!.onclick = (e) => {
+        razorpayObject.open();
+        e.preventDefault();
+      }
     }
-}
+    ngOnInit(): void {
+    
+      const script = document.createElement('script');
+      script.src = 'https://checkout.razorpay.com/v1/checkout.js';
+      script.async = true;
+      script.onload = () => this.setupRazorpay();
+      document.body.appendChild(script);
+      
+      }
+       
+    
+    }
+
