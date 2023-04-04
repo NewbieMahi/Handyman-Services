@@ -1,0 +1,26 @@
+
+    <h2>Shipping Info</h2>
+    <form [formGroup]="signin" >
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" formControlName="name">
+      </div>
+    
+      <div>
+        <label for="mobile-number">Mobile Number:</label>
+        <input type="text" id="mobile-number" name="mobileNumber" formControlName="mobileNumber">
+      </div>
+    
+      <div>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" formControlName="address">
+      </div>
+    
+      <div>
+        <label for="pincode">Pincode:</label>
+        <input type="text" id="pincode" name="pincode" formControlName="pinCode">
+      </div>
+    
+      <button type="submit" (click)="saveOrder()">Submit</button>
+    </form>
+  
