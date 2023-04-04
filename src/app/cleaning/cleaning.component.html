@@ -1,74 +1,18 @@
 <div class="container">
-    <h1 class="text-center mb-4">Cleaning Service</h1>
-    <div class="outer-card card">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-4 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Cleaner Name: Ram<br>
-                Review: ⭐⭐⭐⭐⭐<br>
-                Price: 550₹</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Cleaner Name: Sham<br>
-                Review: ⭐⭐⭐⭐<br>
-                Price: 350₹</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Cleaner Name: John<br>
-                Review: ⭐⭐⭐<br>
-                Price: 200₹</p>
-              <a routerLink='/single-plumber' class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Cleaner Name: David<br>
-                Review: ⭐⭐⭐⭐<br>
-                Price: 350₹</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Cleaner Name: Dummy<br>
-                Review: ⭐⭐⭐⭐<br>
-                Price: 300₹</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-4 mb-4">
-          <div class="card">
-            <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
-            <div class="card-body">
-              <p class="card-text">Cleaner Name: Fakename<br>
-                Review: ⭐⭐⭐⭐<br>
-                Price: 250₹</p>
-              <a href="#" class="btn btn-primary">View</a>
-            </div>
+  <h1 class="text-center mb-4">Cleaning Service</h1>
+  <div class="outer-card card">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-4 mb-4" *ngFor="let worker of workerData">
+        <div class="card">
+          <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Cleaner Name: {{worker.name}}<br>
+              Review: ⭐⭐⭐⭐⭐<br>
+              Price: {{worker.price}}₹</p>
+            <a href="#" class="btn btn-primary">View</a>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+</div>

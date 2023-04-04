@@ -11,6 +11,8 @@ import { AllServiceService } from '../all-service.service';
 })
 export class ServicesComponent implements OnInit {
   workers: any[] = [];
+  workerData: any[] = [];
+
 
   constructor(private allService: AllServiceService) { }
 
@@ -19,10 +21,12 @@ export class ServicesComponent implements OnInit {
 
   getAllService(service: string) {
     console.log(service);
-    this.allService.getWorkersByService(service).subscribe((response:any)=> console.log(response),
-    (error: any) => console.error('Error while login into system:', error)
+    this.allService.getWorkersByService(service).subscribe(
+      (response:any) => {
+        this.workerData = response;
+      },
+      (error: any) => console.error('Error while login into system:', error)
     );
-   
   }
   
 

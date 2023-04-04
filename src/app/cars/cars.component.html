@@ -1,4 +1,25 @@
 <div class="container">
+  <h1 class="text-center mb-4">Car & Bike Services</h1>
+  <div class="outer-card card">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-4 mb-4" *ngFor="let worker of workerData">
+        <div class="card">
+          <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Mecahnic Name: {{worker.name}}<br>
+              Review: ⭐⭐⭐⭐⭐<br>
+              Price: {{worker.price}}₹</p>
+            <a href="#" class="btn btn-primary">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="container">
     <h1 class="text-center mb-4">Car & Bike Services</h1>
     <div class="outer-card card">
       <div class="row justify-content-center">
@@ -71,4 +92,4 @@
       </div>
     </div>
   </div>
-  
+   -->

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AllServiceService } from '../all-service.service';
 
 @Component({
   selector: 'app-cleaning',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CleaningComponent implements OnInit {
 
-  constructor() { }
-
+  workerData: any;
+  constructor(private allService: AllServiceService) {}
+  
   ngOnInit(): void {
+    this.allService.getWorkersByService('Cleaner').subscribe(users => {
+      this.workerData = users;
+    });
+   
   }
 
 }
