@@ -18,7 +18,7 @@ import { WorkerChartComponent } from './worker-chart/worker-chart.component';
 import { UserTableComponent } from './user-table/user-table.component';
 import { WorkerTableComponent } from './worker-table/worker-table.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
-
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
@@ -37,7 +37,8 @@ const routes: Routes = [
   { path: 'all-users', component: UserTableComponent},
   {path:'all-workers', component: WorkerTableComponent},
   { path:'google-map',component:GoogleMapComponent},
-  { path:'shipping-info', component: ShippingFormComponent}
+  { path:'shipping-info', component: ShippingFormComponent},
+  { path:'admin-view',component: AdminViewComponent }
 
 ];
 

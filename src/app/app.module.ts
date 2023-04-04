@@ -41,7 +41,7 @@ import { MatTableModule } from '@angular/material/table'; // add this import
 import { UserTableComponent } from './user-table/user-table.component';
 import { WorkerTableComponent } from './worker-table/worker-table.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
-
+import { AdminViewComponent } from './admin-view/admin-view.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -65,7 +65,8 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
     PaymentComponent,
     UserTableComponent,
     WorkerTableComponent,
-    ShippingFormComponent
+    ShippingFormComponent,
+    AdminViewComponent
   ],
   imports: [
     // CarouselModule.forRoot(),
