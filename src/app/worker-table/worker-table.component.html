@@ -1,4 +1,9 @@
-
+<div class="search-container">
+  <mat-form-field>
+    <input matInput placeholder="Search" [(ngModel)]="searchText" (keyup)="applyFilter()">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="applyFilter()">Search</button>
+</div>
 <table class="user-table" mat-table [dataSource]="dataSource" matSort>
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> ID </th>

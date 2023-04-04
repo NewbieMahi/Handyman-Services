@@ -112,12 +112,12 @@ export class WorkerChartComponent implements OnInit {
           datasets: [{
             data: pieChartData,
             backgroundColor: [
-              'rgba(255, 99, 132, 0.5)',
-              'rgba(54, 162, 235, 0.5)',
-              'rgba(255, 206, 86, 0.5)',
-              'rgba(75, 192, 192, 0.5)',
-              'rgba(153, 102, 255, 0.5)',
-              'rgba(255, 159, 64, 0.5)'
+              'rgba(0, 128, 128, 1)',
+              'rgba(255, 165, 0, 1)',
+              'rgba(0, 0, 139, 1)',
+              'rgba(0, 128, 0, 1)',
+              'rgba(255, 20, 147, 1)',
+              'rgba(148, 0, 211, 1)'
             ]
           }]
         }
@@ -134,12 +134,12 @@ export class WorkerChartComponent implements OnInit {
               data: barChartData,
               label: 'Number of Workers',
               backgroundColor: [
-                'rgba(255, 99, 132, 0.5)',
-                'rgba(54, 162, 235, 0.5)',
-                'rgba(255, 206, 86, 0.5)',
-                'rgba(75, 192, 192, 0.5)',
-                'rgba(153, 102, 255, 0.5)',
-                'rgba(255, 159, 64, 0.5)'
+                'rgba(0, 128, 128, 1)',
+                'rgba(255, 165, 0, 1)',
+                'rgba(0, 0, 139, 1)',
+                'rgba(0, 128, 0, 1)',
+                'rgba(255, 20, 147, 1)',
+                'rgba(148, 0, 211, 1)'
               ]
             }]
         },
@@ -166,12 +166,12 @@ this.doughnutChart = new Chart('doughnutChart', {
     datasets: [{
       data: doughnutChartData,
       backgroundColor: [
-        'rgba(255, 99, 132, 0.5)',
-        'rgba(54, 162, 235, 0.5)',
-        'rgba(255, 206, 86, 0.5)',
-        'rgba(75, 192, 192, 0.5)',
-        'rgba(153, 102, 255, 0.5)',
-        'rgba(255, 159, 64, 0.5)'
+        'rgba(0, 128, 128, 1)',
+        'rgba(255, 165, 0, 1)',
+        'rgba(0, 0, 139, 1)',
+        'rgba(0, 128, 0, 1)',
+        'rgba(255, 20, 147, 1)',
+        'rgba(148, 0, 211, 1)'
       ]
     }]
   }
