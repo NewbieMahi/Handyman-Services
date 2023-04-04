@@ -22,6 +22,8 @@ export class ShippingFormComponent {
   address: string ='';
   pincode: string ='';
 
+  isBooked = false; 
+
 
   matcher = new MyErrorStateMatcher();
   signin: FormGroup = new FormGroup({
@@ -49,14 +51,15 @@ export class ShippingFormComponent {
     }
     setupRazorpay() {
       const options = {
-        "key": "rzp_test_kF9SntPGkbmQjf",
+        "key": "rzp_test_1KFuulfE9Tt0bY",
         "amount": "10000",
         "currency": "INR",
         "name": "Handyman Service",
         "description": "Pay & Book your worker",
         "image": "https://tse4.mm.bing.net/th?id=OIP.hNDFGMar6YOB3lfEGPsOXAHaHa&pid=Api&P=0",
-        "order_id": "order_LXDvZtXclSsNGS",
+        "order_id": "order_LZecvbZa6njjgv",
         "handler": (response:any) => {
+          this.isBooked = true;
           console.log(response);
           alert("This step of Payment Succeeded");
         },
