@@ -17,7 +17,8 @@ export class AppComponent {
   ngOnInit() {
     this.authService.currentUser.subscribe(user => {
       this.currentUser = user;
-      console.log(user);
+      console.log("User fetched after login button",user);
+
     });
 
     //----------- chatbot's code --------------//

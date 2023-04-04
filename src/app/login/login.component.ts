@@ -10,6 +10,8 @@ import { Router } from '@angular/router'; // Import the Router service
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  isLoggedIn = false; // initialize isLoggedIn to false
+  currentUserEmail = ''; 
   signin: FormGroup = new FormGroup({
     email: new FormControl('', [Validators.email, Validators.required ]),
     password: new FormControl('', [Validators.required, Validators.min(3) ]),
@@ -33,13 +35,23 @@ export class LoginComponent implements OnInit {
       tap(response => {
         console.log('Login Successful', response);
         this.AuthService.currentUser.next(response); // set the currentUser in the AuthService
-        this.router.navigateByUrl('/'); // navigate to the home page
+        let userType = response.userType;
+        this.isLoggedIn = true; // set isLoggedIn to true
+        this.currentUserEmail = response.email;
+        if (userType === 'admin') {
+          this.router.navigate(['/admin-view']);
+        } else {
+          this.router.navigate(['/']);
+        }
+        
       })
     )
     .subscribe(
-      (      response: any) => console.log('Login Successfull', response),
-      (      error: any) => console.error('Error while login into system:', error)
-    );    
+      response => {
+        // console.log('Login Successful', response)
+      },
+      error => console.error('Error while logging in:', error)
+    ); 
   }
 
   ngOnInit(): void {
