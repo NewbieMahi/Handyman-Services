@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
+import { ReviewServiceService } from '../review-service.service';
 
 @Component({
   selector: 'app-review-recommendation',
@@ -9,20 +10,22 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ReviewRecommendationComponent implements OnInit {
 
 
-    @Input() workerId: string | undefined;
-    recommendations: any[] = [];
-  
-    constructor(private http: HttpClient) { }
-  
-    ngOnInit() {
-      this.getRecommendations();
-    }
-  
-    getRecommendations() {
-      this.http.get<any[]>(`http://localhost:5000/api/recommendations/${this.workerId}`)
-        .subscribe(recommendations => {
-          this.recommendations = recommendations;
-        });
-    }
+  reviews: any[] | undefined;
+
+  constructor(private reviewService: ReviewServiceService) {}
+
+  ngOnInit() {
+    
+    this.reviewService.getReviews().subscribe((response: any) => {
+      console.log(response);
+      this.reviews = response;
+      // Perform sentiment analysis on reviews
+    },    
+    (error: any) => console.error("Error while fetching ",error)
+    );
+
+  }
 
 }
+
+
