@@ -76,7 +76,9 @@ export class GoogleMapComponent implements OnInit {
     if (!window['google']) {
       const script = document.createElement('script');
       script.type = 'text/javascript';
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBkhIXgkHFnbAOGeeQyA3YHtoehv_DH2hk';
+      // script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDxiu5uY6wszmggufbc1t3-BtPt0lR17Yg';
+      // working link below
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyChyVRjwosD4VM7jVmxMwJfLPEqdXLSqtw';
       document.body.appendChild(script);
       script.onload = callback;
     } else {
@@ -84,6 +86,7 @@ export class GoogleMapComponent implements OnInit {
     }
   }
   initMap() {
+
     this.map = new google.maps.Map(document.getElementById('map'), {
       center: { lat: 28.6139, lng: 77.2090 },
       zoom: 8,
