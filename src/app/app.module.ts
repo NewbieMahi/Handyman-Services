@@ -36,12 +36,14 @@ import { PaymentComponent } from './payment/payment.component';
 import { AuthService } from './auth.service';
 import { AllServiceService } from './all-service.service';
 import { UserTableService } from './user-table.service';
+import { OrderTableService } from './order-table.service';
 import { WorkerTableService } from './worker-table.service';
 import { MatTableModule } from '@angular/material/table'; // add this import
 import { UserTableComponent } from './user-table/user-table.component';
 import { WorkerTableComponent } from './worker-table/worker-table.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
+import { OrderChartComponent } from './order-chart/order-chart.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -66,7 +68,8 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
     UserTableComponent,
     WorkerTableComponent,
     ShippingFormComponent,
-    AdminViewComponent
+    AdminViewComponent,
+    OrderChartComponent
   ],
   imports: [
     // CarouselModule.forRoot(),
@@ -98,6 +101,7 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
     WorkerChartService,
     UserTableService,
     WorkerTableService,
+    OrderTableService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]
