@@ -12,4 +12,7 @@ export class AllServiceService {
   getWorkersByService(service: string) {
     return this.http.get(`http://localhost:5000/workers?services=${service}`);
   }
+  getWorkerById(id: string) {
+    return this.http.get(`http://localhost:5000/workers/${id}`);
+  }
 }

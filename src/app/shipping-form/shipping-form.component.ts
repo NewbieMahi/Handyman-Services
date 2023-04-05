@@ -57,7 +57,7 @@ export class ShippingFormComponent {
         "name": "Handyman Service",
         "description": "Pay & Book your worker",
         "image": "https://tse4.mm.bing.net/th?id=OIP.hNDFGMar6YOB3lfEGPsOXAHaHa&pid=Api&P=0",
-        "order_id": "order_LZecvbZa6njjgv",
+        "order_id": "order_LZpPhB1tSA6RRE",
         "handler": (response:any) => {
           this.isBooked = true;
           console.log(response);

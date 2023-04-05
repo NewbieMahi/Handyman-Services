@@ -1,8 +1,15 @@
+<div class="search-container">
+  <mat-form-field>
+    <input matInput placeholder="Search" [(ngModel)]="searchText" (keyup)="applyFilter()">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="applyFilter()">Search</button>
+</div>
+
 <div class="container">
   <h1 class="text-center mb-4">Carpentar</h1>
   <div class="outer-card card">
     <div class="row justify-content-center">
-      <div class="col-12 col-md-4 mb-4" *ngFor="let worker of workerData">
+      <div class="col-12 col-md-4 mb-4" *ngFor="let worker of filteredWorkerData">
         <div class="card">
           <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
           <div class="card-body">

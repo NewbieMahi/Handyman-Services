@@ -56,4 +56,25 @@
   .card-link:hover {
     background-color: #3e8e41;
   }
-  
+   
+.search-container {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+button.mat-raised-button {
+  margin-left: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+button.mat-raised-button:hover {
+  background-color: #3f51b5;
+}
+
+.mat-form-field {
+  width: 250px;
+  margin-right: 1rem;
+}
