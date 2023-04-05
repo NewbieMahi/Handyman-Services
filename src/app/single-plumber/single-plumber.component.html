@@ -1,53 +1,60 @@
-<html>
-  <body>
-    
-    <div class="container">
-      <h1 style="text-align: center;"> Plumber</h1>
-      <div class="outer-card card">
-    
-        <div class="row">
-          <div class="col">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
-              <div class="card-body">
-    
-                <p class="card-text">Plumber Name: John Smith<br>
-                  Review: ⭐⭐⭐<br>
-                  <button class="btn" routerLink="/shipping-info">Book Now</button>
-    
-                </p>
-              </div>
-    
-            </div>
-          </div>
-    
-          <div class="col">
-            <div class="card" style="width: 18rem;">
-              <p><b>Price :</b>  100₹ /Hr <br>
-                <b>Availability:</b> Available <br>
-    
-                <b>Address : Karad </b> <a routerLink='/google-map' href="">View on map</a>
-                <br><B>Phone Number: </B>908080808
-              </p>
-    
-            </div>
-          </div>
-          <div class="col">
-        <div class="card" style="width: 18rem;">
-          <video class="video-fluid z-depth-1" autoplay loop controls muted>
-            <source src="../../assets/img/plumbing.mp4" type="video/mp4" />
-        </video>
-             
-              <!-- <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap"> -->
-          </div> 
-          
+<div class="container">
+  <h1 style="text-align: center; color: #444444;">Plumber</h1>
+  <div class="outer-card card">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+          <img class="card-img-top" src="../../assets/img/plumberimg.jpg" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text" style="color: #444444;">Plumber Name: John Smith<br>
+              Review: ⭐⭐⭐<br>
+              <button class="btn" style="background-color: #1E90FF; color: #FFFFFF;" routerLink="/shipping-info">Book Now</button>
+            </p>
           </div>
         </div>
       </div>
+      <div class="col">
+        <div class="card" style="width: 18rem; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+          <video class="video-fluid z-depth-1" autoplay loop controls muted>
+            <source src="../../assets/img/plumbing.mp4" type="video/mp4" />
+          </video>
+      </div>
+      <div class="row">
+      <div class="col">
+        <div class="card" style="width: 18rem; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+          <p style="color: #444444;"><b>Price :</b>  100₹ /Hr <br>
+            <b>Availability:</b> Available <br>
+            <b>Address : Karad </b> <a routerLink='/google-map' href="" style="color: #1E90FF;">View on map</a>
+            <br><B>Phone Number: </B>908080808
+          </p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="row">
+        <form id="review-form" method="post" action="/submit-review">
+          <label for="review" style="color: #444444;">Review:</label>
+          <textarea id="review" name="review"></textarea><br><br>
+          <button type="submit" style="background-color: #1E90FF; color: #FFFFFF;">Submit</button>
+        </form>
+      </div>
+    
+      <div class="row">
+        <form method="post" action="/submit-rating">
+          <div class="rating">
+            <label for="rating" style="color: #444444;">Rate this product:</label>
+            <select id="rating" name="rating" style="color: #1E90FF;">
+              <option value="">--Select rating--</option>
+              <option value="5">5:-Outstanding</option>
+              <option value="4">4:-Good</option>
+              <option value="3">3:-Neutral</option>
+              <option value="2">2:-BAD</option>
+              <option value="1">1:-Worst</option>
+            </select>
+          </div>
+          <input type="submit" value="Submit Rating" style="background-color: #1E90FF; color: #FFFFFF;">
+        </form>
+      </div>
     </div>
-    
-    
 
-  </body>
-</html>
-
+   
+      

@@ -78,7 +78,7 @@ export class GoogleMapComponent implements OnInit {
       script.type = 'text/javascript';
       // script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDxiu5uY6wszmggufbc1t3-BtPt0lR17Yg';
       // working link below
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyChyVRjwosD4VM7jVmxMwJfLPEqdXLSqtw';
+      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDqv1E7tHy07GOjDuYGIq_WYIAoNpRfiTY';
       document.body.appendChild(script);
       script.onload = callback;
     } else {
