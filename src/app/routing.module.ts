@@ -21,6 +21,7 @@ import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { OrderChartComponent } from './order-chart/order-chart.component';
 import { BlogComponent } from './blog/blog.component';
+import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
   { path: 'user-register', component: UserRegisterComponent },
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path:'shipping-info', component: ShippingFormComponent},
   { path:'admin-view',component: AdminViewComponent },
   { path:'all-orders', component: OrderChartComponent},
-  { path:'blogs', component: BlogComponent}
+  { path:'blogs', component: BlogComponent},
+  { path: 'allblogs', component: AllBlogsComponent }
 
 ];
 
