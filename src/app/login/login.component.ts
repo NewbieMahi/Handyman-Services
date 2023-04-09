@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
         let userType = response.userType;
         this.isLoggedIn = true; // set isLoggedIn to true
         this.currentUserEmail = response.email;
+        console.log(this.currentUserEmail);
         if (userType === 'admin') {
           this.router.navigate(['/admin-view']);
         } else {

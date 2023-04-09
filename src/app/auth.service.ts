@@ -7,9 +7,11 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
+  
   public currentUser = new BehaviorSubject<any>(null);
 
   private baseUrl = 'http://localhost:5000/api/auth/login';
+  router: any;
 
   constructor(private http: HttpClient) { }
   
@@ -25,8 +27,10 @@ export class AuthService {
         tap(response => {
           console.log('Login Successful', response);
           this.currentUser.next(response); // set the currentUser in the AuthService
+          
         })
       );
+    
   }
 
 }

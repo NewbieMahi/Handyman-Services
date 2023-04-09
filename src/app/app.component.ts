@@ -8,6 +8,8 @@ import { AuthService } from './auth.service';
 })
 export class AppComponent {
   currentUser: any;
+  name: any;
+
  
 
   constructor(private authService: AuthService) {}
@@ -18,6 +20,7 @@ export class AppComponent {
     this.authService.currentUser.subscribe(user => {
       this.currentUser = user;
       console.log("User fetched after login button",user);
+      this.name = user.username;
 
     });
 

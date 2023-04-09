@@ -1,4 +1,4 @@
-<button class="create-blog-button" routerLink="/blogs">Create Blog</button> 
+<button class="create-blog-button" *ngIf="loggedIn" routerLink="/blogs">Create Blog</button> 
 
 <div class="blog-list">
   <div class="blog-item" *ngFor="let blog of blogs">
