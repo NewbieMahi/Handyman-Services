@@ -19,6 +19,9 @@ export class BloggingService {
      };
      return this.http.post('http://localhost:5000/api/blogs',data);
   }
+  getBlogById(id:string){
+    return this.http.get(`http://localhost:5000/api/blogs/${id}`)
+  }
 }
 
 

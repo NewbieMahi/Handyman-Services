@@ -1,3 +1,5 @@
+<button class="create-blog-button" routerLink="/blogs">Create Blog</button> 
+
 <div class="blog-list">
   <div class="blog-item" *ngFor="let blog of blogs">
     <div class="blog-image">
@@ -9,7 +11,6 @@
       <div class="blog-summary" [ngClass]="{ 'expanded': blog.expanded }">
         <p>{{ blog.description | slice:0:200 }}...</p>
         <button class="read-more-button" >Read More</button>
-
       </div>
     </div>
   </div>
