@@ -48,6 +48,7 @@ import { BlogComponent } from './blog/blog.component';
 import { MatCardModule } from '@angular/material/card';
 import { BloggingService } from './blogging.service';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
+import { SingleBlogComponent } from './single-blog/single-blog.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -76,7 +77,8 @@ import { AllBlogsComponent } from './all-blogs/all-blogs.component';
     AdminViewComponent,
     OrderChartComponent,
     BlogComponent,
-    AllBlogsComponent
+    AllBlogsComponent,
+    SingleBlogComponent
   ],
   imports: [
     // CarouselModule.forRoot(),

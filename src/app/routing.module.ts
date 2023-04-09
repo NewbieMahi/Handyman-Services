@@ -22,6 +22,9 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
 import { OrderChartComponent } from './order-chart/order-chart.component';
 import { BlogComponent } from './blog/blog.component';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
+import { SingleBlogComponent } from './single-blog/single-blog.component';
+
+
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
   { path: 'user-register', component: UserRegisterComponent },
@@ -43,7 +46,8 @@ const routes: Routes = [
   { path:'admin-view',component: AdminViewComponent },
   { path:'all-orders', component: OrderChartComponent},
   { path:'blogs', component: BlogComponent},
-  { path: 'allblogs', component: AllBlogsComponent }
+  { path: 'allblogs', component: AllBlogsComponent },
+  { path: 'blog/:id', component: SingleBlogComponent }
 
 ];
 
