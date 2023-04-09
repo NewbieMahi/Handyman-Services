@@ -1,9 +1,16 @@
+<div class="blog-list">
+  <div class="blog-item" *ngFor="let blog of blogs">
+    <div class="blog-image">
+      <img src="../../assets/img/all-workers.jpg" alt="Blog image">
+    </div>
+    <div class="blog-content">
+      <h2 class="blog-title">{{ blog.title }}</h2>
+      <p class="blog-meta">By {{ blog.author }} on {{ blog.date | date:'dd/MM/yyyy hh:mm a' }}</p>
+      <div class="blog-summary" [ngClass]="{ 'expanded': blog.expanded }">
+        <p>{{ blog.description | slice:0:200 }}...</p>
+        <button class="read-more-button" >Read More</button>
 
-<div *ngFor="let blog of blogs">
-    <img src="../../assets/img/all-workers.jpg" alt="Blog image">
-    <h2>{{ blog.title }}</h2>
-
-    <p>By {{ blog.author }} on {{ blog.date }}</p>
-    <p>{{ blog.description }}</p>
+      </div>
+    </div>
   </div>
-  
+</div>

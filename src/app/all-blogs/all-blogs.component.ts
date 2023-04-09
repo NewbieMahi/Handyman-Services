@@ -15,7 +15,7 @@ export class AllBlogsComponent implements OnInit {
     .subscribe(
       response =>{
         console.log(response); 
-        this.blogs = response;    
+        this.blogs = response;  
       },
       error => {
         console.log("error while fetching blog", error);
