@@ -12,7 +12,6 @@ export class BlogComponent implements OnInit {
   blogForm: FormGroup = new FormGroup({
     title: new FormControl(''),
     author: new FormControl(''),
-    image: new FormControl(''),
     description: new FormControl(''),      
     });
  
@@ -22,7 +21,7 @@ export class BlogComponent implements OnInit {
   
   onSubmit() {
     const formData = this.blogForm.value;
-    this.BloggingService.postBlog(formData.title, formData.author, formData.image, formData.description)
+    this.BloggingService.postBlog(formData.title, formData.author, formData.description)
     .subscribe(
       response =>{
         console.log("Blog saved successfully");
