@@ -37,7 +37,7 @@ const routes: Routes = [
   { path:'carrepair', component: CarsComponent},
   { path:'cleaner', component: CleaningComponent},
   { path:'painter', component: PainterComponent},
-  { path:'single-plumber', component:SinglePlumberComponent},
+  { path:'service', component:SinglePlumberComponent},
   { path:'worker-chart', component: WorkerChartComponent},
   { path: 'all-users', component: UserTableComponent},
   {path:'all-workers', component: WorkerTableComponent},
@@ -47,7 +47,8 @@ const routes: Routes = [
   { path:'all-orders', component: OrderChartComponent},
   { path:'blogs', component: BlogComponent},
   { path: 'allblogs', component: AllBlogsComponent },
-  { path: 'blog/:id', component: SingleBlogComponent }
+  { path: 'blog/:id', component: SingleBlogComponent },
+  { path: 'service/:id', component: SinglePlumberComponent}
 
 ];
 

@@ -11,5 +11,8 @@ export class WorkerChartService {
   getWorkers() {
     return this.http.get('http://localhost:5000/api/allworkers');
   }
+  getWorkerById(id:string){
+    return this.http.get(`http://localhost:5000/workers/${id}`);
+  }
 }
 

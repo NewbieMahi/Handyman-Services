@@ -16,7 +16,7 @@
             <p class="card-text">Plumber Name: {{worker.name}}<br>
               Review: ⭐⭐⭐⭐⭐<br>
               Price: {{worker.price}}₹</p>
-            <a href="#" class="btn btn-primary">View</a>
+            <a href="#" class="btn btn-primary" [routerLink]="['/service', worker._id]">View</a>
           </div>
         </div>
       </div>

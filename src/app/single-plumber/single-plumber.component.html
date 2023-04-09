@@ -6,7 +6,7 @@
         <div class="card" style="width: 18rem; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
           <img class="card-img-top" src="../../assets/img/plumberimg.jpg" alt="Card image cap">
           <div class="card-body">
-            <p class="card-text" style="color: #444444;">Plumber Name: John Smith<br>
+            <p class="card-text" style="color: #444444;">Plumber Name: {{plumber.name}}<br>
               Review: ⭐⭐⭐<br>
               <button class="btn" style="background-color: #1E90FF; color: #FFFFFF;" routerLink="/shipping-info">Book Now</button>
             </p>
@@ -22,10 +22,10 @@
       <div class="row">
       <div class="col">
         <div class="card" style="width: 18rem; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-          <p style="color: #444444;"><b>Price :</b>  100₹ /Hr <br>
+          <p style="color: #444444;"><b>Price :</b>  {{plumber.price}}₹ /Hr <br>
             <b>Availability:</b> Available <br>
-            <b>Address : Karad </b> <a routerLink='/google-map' href="" style="color: #1E90FF;">View on map</a>
-            <br><B>Phone Number: </B>908080808
+            <b>Address : {{plumber.address}} </b> <a routerLink='/google-map' href="" style="color: #1E90FF;">View on map</a>
+            <br><B>Phone Number: </B>{{plumber.mobileNumber}}
           </p>
         </div>
       </div>
@@ -41,7 +41,7 @@
       <div class="row">
         <form method="post" action="/submit-rating">
           <div class="rating">
-            <label for="rating" style="color: #444444;">Rate this product:</label>
+            <label for="rating" style="color: #444444;">Rating:</label>
             <select id="rating" name="rating" style="color: #1E90FF;">
               <option value="">--Select rating--</option>
               <option value="5">5:-Outstanding</option>

@@ -24,6 +24,7 @@ export class ServicesComponent implements OnInit {
     this.allService.getWorkersByService(service).subscribe(
       (response:any) => {
         this.workerData = response;
+      
       },
       (error: any) => console.error('Error while login into system:', error)
     );
