@@ -18,7 +18,7 @@ export class BlogComponent implements OnInit {
  
 
   constructor(@Inject(forwardRef(() => BloggingService)) private BloggingService: BloggingService) { }
-  
+  submitted = false;
   onSubmit() {
     const formData = this.blogForm.value;
     this.BloggingService.postBlog(formData.title, formData.author, formData.description)
@@ -26,6 +26,8 @@ export class BlogComponent implements OnInit {
       response =>{
         console.log("Blog saved successfully");
         this.blogForm.reset();
+        this.submitted = true;
+        
       },
       error => {
         console.log("error while creating blog", error);
