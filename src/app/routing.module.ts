@@ -20,6 +20,7 @@ import { WorkerTableComponent } from './worker-table/worker-table.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { OrderChartComponent } from './order-chart/order-chart.component';
+import { BlogComponent } from './blog/blog.component';
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
   { path: 'user-register', component: UserRegisterComponent },
@@ -39,7 +40,8 @@ const routes: Routes = [
   { path:'google-map',component:GoogleMapComponent},
   { path:'shipping-info', component: ShippingFormComponent},
   { path:'admin-view',component: AdminViewComponent },
-  { path:'all-orders', component: OrderChartComponent}
+  { path:'all-orders', component: OrderChartComponent},
+  { path:'blogs', component: BlogComponent}
 
 ];
 

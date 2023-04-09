@@ -44,8 +44,12 @@ import { WorkerTableComponent } from './worker-table/worker-table.component';
 import { ShippingFormComponent } from './shipping-form/shipping-form.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { OrderChartComponent } from './order-chart/order-chart.component';
+import { BlogComponent } from './blog/blog.component';
+import { MatCardModule } from '@angular/material/card';
+import { BloggingService } from './blogging.service';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +73,8 @@ import { OrderChartComponent } from './order-chart/order-chart.component';
     WorkerTableComponent,
     ShippingFormComponent,
     AdminViewComponent,
-    OrderChartComponent
+    OrderChartComponent,
+    BlogComponent
   ],
   imports: [
     // CarouselModule.forRoot(),
@@ -79,6 +84,7 @@ import { OrderChartComponent } from './order-chart/order-chart.component';
     MatToolbarModule,
     MatMenuModule,
     MatRadioModule,
+    MatCardModule,
     BrowserAnimationsModule,
     RoutingModule,
     NgbModule,
@@ -102,6 +108,7 @@ import { OrderChartComponent } from './order-chart/order-chart.component';
     UserTableService,
     WorkerTableService,
     OrderTableService,
+    BloggingService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]
