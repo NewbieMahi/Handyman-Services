@@ -12,8 +12,8 @@ export class GoogleMapComponent implements OnInit {
   @ViewChild('map') mapElement: any;
   // lat = 43.879078;
   // lng = -103.4615581;
-   lat = 28.6139;
-   lng = 77.2090;
+   lat = 17.691401;
+   lng = 74.000938;
    
   markers = [
     { lat: 17.2878, lng: 74.1737 },
@@ -88,7 +88,7 @@ export class GoogleMapComponent implements OnInit {
   initMap() {
 
     this.map = new google.maps.Map(document.getElementById('map'), {
-      center: { lat: 28.6139, lng: 77.2090 },
+      center: { lat: 17.691401, lng: 74.000938 },
       zoom: 8,
     });
   }

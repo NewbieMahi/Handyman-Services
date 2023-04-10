@@ -1,0 +1,46 @@
+<h2 class="title">Update Profile</h2>
+
+<div class="update-profile-container">
+  <div class="card">
+    <h3 class="card-title">Update Profile</h3>
+
+    <form [formGroup]="updateProfileForm" (submit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-col">
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Name" formControlName="name">
+          </mat-form-field>
+        </div>
+
+        <div class="form-col">
+
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Email" formControlName="email">
+            <mat-error class="error-message" *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+              Please enter a valid email address
+            </mat-error>
+            <mat-error class="error-message" *ngIf="emailFormControl.hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-col">
+          <mat-form-field class="form-field">
+            <input matInput placeholder="Phone Number" formControlName="mobileNumber">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <button class="btn update-button" mat-raised-button color="primary" [disabled]="updateProfileForm.invalid || isUpdating">
+          <ng-container *ngIf="!isUpdating">Update</ng-container>
+          <ng-container *ngIf="isUpdating">Updating...</ng-container>
+        </button>
+      </div>
+    </form>
+
+    <div *ngIf="updateSuccessful" class="alert alert-success">
+      Profile updated successfully.
+    </div>
+  </div>
+</div>

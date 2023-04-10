@@ -1,60 +1,68 @@
 <div class="container">
-  <h1 style="text-align: center; color: #444444;">Plumber</h1>
-  <div class="outer-card card">
-    <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-          <img class="card-img-top" src="../../assets/img/plumberimg.jpg" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text" style="color: #444444;">Plumber Name: {{plumber.name}}<br>
-              Review: ⭐⭐⭐<br>
-              <button class="btn" style="background-color: #1E90FF; color: #FFFFFF;" routerLink="/shipping-info">Book Now</button>
-            </p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img class="card-img-top" src="../../assets/img/plumberimg.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Worker Name: {{plumber.name}}</h5>
+          <p class="card-text">Review: ⭐⭐⭐</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary" routerLink="/shipping-info" style="background-color: #1E90FF; color: #FFFFFF;">Book Now</button>
+            </div>
+            <small class="text-muted">{{plumber.price}}₹/Hr</small>
           </div>
         </div>
-      </div>
-      <div class="col">
-        <div class="card" style="width: 18rem; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-          <video class="video-fluid z-depth-1" autoplay loop controls muted>
-            <source src="../../assets/img/plumbing.mp4" type="video/mp4" />
-          </video>
-      </div>
-      <div class="row">
-      <div class="col">
-        <div class="card" style="width: 18rem; background-color: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,0.3);">
-          <p style="color: #444444;"><b>Price :</b>  {{plumber.price}}₹ /Hr <br>
-            <b>Availability:</b> Available <br>
-            <b>Address : {{plumber.address}} </b> <a routerLink='/google-map' href="" style="color: #1E90FF;">View on map</a>
-            <br><B>Phone Number: </B>{{plumber.mobileNumber}}
-          </p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="row">
-        <form id="review-form" method="post" action="/submit-review">
-          <label for="review" style="color: #444444;">Review:</label>
-          <textarea id="review" name="review"></textarea><br><br>
-          <button type="submit" style="background-color: #1E90FF; color: #FFFFFF;">Submit</button>
-        </form>
-      </div>
-    
-      <div class="row">
-        <form method="post" action="/submit-rating">
-          <div class="rating">
-            <label for="rating" style="color: #444444;">Rating:</label>
-            <select id="rating" name="rating" style="color: #1E90FF;">
-              <option value="">--Select rating--</option>
-              <option value="5">5:-Outstanding</option>
-              <option value="4">4:-Good</option>
-              <option value="3">3:-Neutral</option>
-              <option value="2">2:-BAD</option>
-              <option value="1">1:-Worst</option>
-            </select>
-          </div>
-          <input type="submit" value="Submit Rating" style="background-color: #1E90FF; color: #FFFFFF;">
-        </form>
       </div>
     </div>
-
-   
-      
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Price: {{plumber.price}}₹ /Hr</h5>
+          <p class="card-text">Availability: Available</p>
+          <p class="card-text">Address: {{plumber.address}} <a href="#" routerLink="/google-map">View on map</a></p>
+          <p class="card-text">Phone Number: {{plumber.mobileNumber}}</p>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <!-- <h5 class="card-title">Video</h5> -->
+          <video class="card-video-top" src="../../assets/img/plumbing.mp4" controls></video>
+        </div>
+     </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Submit a Review</h5>
+          <form id="review-form" method="post" action="/submit-review">
+            <div class="form-group">
+              <label for="review">Review:</label>
+              <textarea class="form-control" id="review" name="review" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="card mb-4 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Rate this Worker</h5>
+          <form method="post" action="/submit-rating">
+            <div class="form-group">
+              <label for="rating">Rating:</label>
+              <select class="form-control" id="rating" name="rating">
+                <option value="">--Select rating--</option>
+                <option value="5">5:-Outstanding</option>
+                <option value="4">4:-Good</option>
+                <option value="3">3:-Neutral</option>
+                <option value="2">2:-Bad</option>
+                <option value="1">1:-Worst</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Rating</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

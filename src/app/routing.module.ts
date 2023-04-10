@@ -49,6 +49,8 @@ const routes: Routes = [
   { path: 'allblogs', component: AllBlogsComponent },
   { path: 'blog/:id', component: SingleBlogComponent },
   { path: 'service/:id', component: SinglePlumberComponent}
+  
+
 
 ];
 
