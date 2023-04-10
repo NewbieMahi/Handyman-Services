@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { AuthService } from './auth.service';
+import { MatMenuTrigger } from '@angular/material/menu';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ export class AppComponent {
   name: any;
 
  
+  @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger | undefined;
 
   constructor(private authService: AuthService) {}
 
