@@ -31,7 +31,4 @@ export class WorkerService {
     return this.http.get(`http://localhost:5000/workers/${email}`);
   }
 
-  updateWorker(updatedWorker:any){
-
-  }
 }

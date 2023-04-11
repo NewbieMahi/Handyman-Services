@@ -5,7 +5,21 @@
         <img class="card-img-top" src="../../assets/img/plumberimg.jpg" alt="Card image cap">
         <div class="card-body">
           <h5 class="card-title">Worker Name: {{plumber.name}}</h5>
-          <p class="card-text">Review: ⭐⭐⭐</p>
+          <p class="card-text">Review: 
+            <ng-container *ngFor="let i of [1,2,3,4,5]">
+              <span *ngIf="plumber.averageRating >= i">
+                <i class="fas fa-star" style="color: gold;"></i>
+              </span>
+              <span *ngIf="plumber.averageRating >= i-0.5 && plumber.averageRating < i">
+                <i class="fas fa-star-half-alt" style="color: gold;"></i>
+              </span>
+              <span *ngIf="plumber.averageRating < i-0.5">
+                <i class="far fa-star" style="color: gold;"></i>
+              </span>
+            </ng-container>
+          </p>
+          
+
           <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
               <button type="button" class="btn btn-primary" routerLink="/shipping-info" style="background-color: #1E90FF; color: #FFFFFF;">Book Now</button>
@@ -59,7 +73,7 @@
                 <option value="1">1:-Worst</option>
               </select>
             </div>
-            <button type="submit" class="btn btn-primary">Submit Rating</button>
+            <button type="submit" class="btn btn-primary" (click)="submitRating()">Submit Rating</button>
           </form>
         </div>
       </div>

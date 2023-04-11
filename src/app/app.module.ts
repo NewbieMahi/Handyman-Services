@@ -32,7 +32,6 @@ import { WorkerService } from './worker.service';
 import { WorkerChartService } from './worker-chart.service';
 import { HttpClientModule } from '@angular/common/http';
 import { GoogleMapComponent } from './google-map/google-map.component';
-import { PaymentComponent } from './payment/payment.component';
 import { AuthService } from './auth.service';
 import { AllServiceService } from './all-service.service';
 import { UserTableService } from './user-table.service';
@@ -53,6 +52,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { RazorpayTransactionsComponent } from './razorpay-transactions/razorpay-transactions.component';
 import { BlogTableComponent } from './blog-table/blog-table.component';
 import { AllBlogService } from './all-blog.service';
+import { PredictiveMaintanceComponent } from './predictive-maintance/predictive-maintance.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -74,7 +74,6 @@ import { AllBlogService } from './all-blog.service';
     CleaningComponent,
     PainterComponent,
     GoogleMapComponent,
-    PaymentComponent,
     UserTableComponent,
     WorkerTableComponent,
     ShippingFormComponent,
@@ -85,7 +84,8 @@ import { AllBlogService } from './all-blog.service';
     SingleBlogComponent,
     UpdateProfileComponent,
     RazorpayTransactionsComponent,
-    BlogTableComponent
+    BlogTableComponent,
+    PredictiveMaintanceComponent
   ],
   imports: [
     // CarouselModule.forRoot(),

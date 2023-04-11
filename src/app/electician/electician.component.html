@@ -3,6 +3,17 @@
     <input matInput placeholder="Search" [(ngModel)]="searchText" (keyup)="applyFilter()">
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="applyFilter()">Search</button>
+  
+  <mat-form-field style="margin-left: 30px;">
+    <mat-select [(ngModel)]="sortBy" (selectionChange)="applySort()">
+      <!-- <mat-option value="no">Sort by</mat-option> -->
+      <mat-option value="rating">Sort by Rating</mat-option>
+      <mat-option value="review">Sort by Review</mat-option>
+      <mat-option value="distance">Sort by Distance</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  
 </div>
 
 <div class="container">
@@ -14,7 +25,17 @@
           <img class="card-img-top" src="../../../assets/img/plumberimg.jpg" alt="Card image cap">
           <div class="card-body">
             <p class="card-text">Electrician Name: {{worker.name}}<br>
-              Review: ⭐⭐⭐⭐⭐<br>
+              Review: <ng-container *ngFor="let i of [1,2,3,4,5]">
+                <span *ngIf="worker.averageRating >= i">
+                  <i class="fas fa-star" style="color: gold;"></i>
+                </span>
+                <span *ngIf="worker.averageRating >= i-0.5 && worker.averageRating < i">
+                  <i class="fas fa-star-half-alt" style="color: gold;"></i>
+                </span>
+                <span *ngIf="worker.averageRating < i-0.5">
+                  <i class="far fa-star" style="color: gold;"></i>
+                </span>
+              </ng-container><br>
               Price: {{worker.price}}₹</p>
             <a href="#" class="btn btn-primary" [routerLink]="['/service', worker._id]">View</a>
           </div>

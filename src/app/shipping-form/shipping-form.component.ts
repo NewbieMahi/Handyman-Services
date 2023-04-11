@@ -1,7 +1,9 @@
 import { Component, forwardRef, Inject } from '@angular/core';
 import { ShippingInfoService } from '../shipping-info.service';
 import { ErrorStateMatcher } from '@angular/material/core';
+import { PaymentService } from '../payment.service';
 import { FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 declare var Razorpay: any;
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -17,6 +19,7 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./shipping-form.component.css']
 })
 export class ShippingFormComponent {
+  orderId: any;
   name: string ='';
   mobileNumber: string ='';
   address: string ='';
@@ -33,7 +36,11 @@ export class ShippingFormComponent {
    pinCode: new FormControl('')
 
  });
-  constructor(@Inject(forwardRef(() => ShippingInfoService)) private ShippingInfoService: ShippingInfoService) { }
+ 
+  constructor(@Inject(forwardRef(() => ShippingInfoService)) private ShippingInfoService: ShippingInfoService,
+  private paymentService: PaymentService,
+  private router: Router 
+  ) { }
 
   saveOrder(){
 
@@ -47,8 +54,33 @@ export class ShippingFormComponent {
         console.error('Error while saving order:', error);
       }
     );
+   this.paymentService.createPayment(10000)
+   .subscribe(
+    response => {
+      console.log('data fetched by order creation', response);
+      this.orderId = response.id;
+      console.log("Order id", this.orderId);
+    },
+    error => {
+      console.error('Error while creating order:', error);
+    }
+  );
     
     }
+
+    sendOTP(){
+      const formData = this.signin.value;
+      this.ShippingInfoService.sendOtpTo(formData.mobileNumber)
+      .subscribe(
+        response => {
+          console.log('otp sended success', response);
+        },
+        error => {
+          console.error('Error while sending otp:', error);
+        }
+      );
+    }
+
     setupRazorpay() {
       const options = {
         "key": "rzp_test_1KFuulfE9Tt0bY",
@@ -57,11 +89,15 @@ export class ShippingFormComponent {
         "name": "Handyman Service",
         "description": "Pay & Book your worker",
         "image": "https://tse4.mm.bing.net/th?id=OIP.hNDFGMar6YOB3lfEGPsOXAHaHa&pid=Api&P=0",
-        "order_id": "order_LZpPhB1tSA6RRE",
+        "order_id": this.orderId,
         "handler": (response:any) => {
           this.isBooked = true;
           console.log(response);
-          alert("This step of Payment Succeeded");
+          alert("This step of Payment Succeeded! Book more service here.");
+          this.sendOTP();
+          // this.router.navigate(['/service-component']);
+          // this.router.navigate(['service-component']);
+
         },
         "prefill": {
           "contact": "9359614993",
@@ -81,7 +117,7 @@ export class ShippingFormComponent {
     
       razorpayObject.on('payment.failed', (response:any) => {
         console.log(response);
-        alert("This step of Payment Failed");
+        alert("This step of Payment Failed. Please include valid credential");
       });
     
       document.getElementById('pay-button')!.onclick = (e) => {
@@ -90,6 +126,8 @@ export class ShippingFormComponent {
       }
     }
     ngOnInit(): void {
+
+
     
       const script = document.createElement('script');
       script.src = 'https://checkout.razorpay.com/v1/checkout.js';

@@ -29,7 +29,7 @@ export class AppComponent {
     //----------- chatbot's code --------------//
     (function (d, m) {
       var kommunicateSettings = {
-        appId: "1e968ac68b4a89224f4cb7f9cc4c6d19e",
+        appId: "258ac35c50eac3cd4254bc70f5e37443a",
         popupWidget: true,
         automaticChatOpenOnNavigation: true,
       };

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WorkerChartService } from '../worker-chart.service';
-import { BloggingService } from '../blogging.service';
 @Component({
   selector: 'app-single-plumber',
   templateUrl: './single-plumber.component.html',
@@ -10,7 +9,7 @@ import { BloggingService } from '../blogging.service';
 export class SinglePlumberComponent implements OnInit {
   plumber: any = {}; // object to store plumber data
   reviewText: string = ''; // variable to store user's review
-  rating: number = 0; // variable to store user's rating
+  rating: any ; // variable to store user's rating
 
   constructor(
     private route: ActivatedRoute,
@@ -29,12 +28,23 @@ export class SinglePlumberComponent implements OnInit {
       response => {
         console.log(response);
         this.plumber = response;
+        console.log("plumber info", this.plumber);
       },
       error => {
         console.log('Error while fetching worker details', error);
       }
     );
   
+  }
+
+  submitRating() {
+    const workerId = this.plumber.workerId;
+  const rating = (document.getElementById('rating') as HTMLSelectElement).value;
+  
+  this.workerService.submitRating(workerId, rating).subscribe((data: any) => {
+    this.plumber.averageRating = data.averageRating;
+    alert(data.message);
+  });
   }
   
 

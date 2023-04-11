@@ -14,5 +14,12 @@ export class WorkerChartService {
   getWorkerById(id:string){
     return this.http.get(`http://localhost:5000/workers/${id}`);
   }
+  submitRating(workerId:string, rating:string){
+    const data = {
+      workerId:workerId,
+      rating: rating
+    }
+    return this.http.post('http://localhost:5000/submit-rating',data);
+  }
 }
 

@@ -1,0 +1,19 @@
+<h3>Send Notification</h3>
+<div class="notification-container">
+    <label for="email">Email:</label>
+    <input id="email" type="text" [(ngModel)]="toEmail">
+    <label for="email-subject">Email Subject:</label>
+    <input id="email-subject" type="text" [(ngModel)]="emailSubject">
+    <label for="email-body">Email Body:</label>
+    <textarea id="email-body" [(ngModel)]="emailBody"></textarea>
+    <button >Send Email</button>
+  </div>
+  
+  <div class="notification-container">
+    <label for="phone">Phone:</label>
+    <input id="phone" type="text" [(ngModel)]="toPhone">
+    <label for="sms-body">SMS Body:</label>
+    <textarea id="sms-body" [(ngModel)]="smsBody"></textarea>
+    <button (click)="sendSmsNotification()">Send SMS</button>
+    <span *ngIf="smsSent" class=".success-message">SMS sent successfully!</span> 
+  </div>
