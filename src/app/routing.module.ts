@@ -23,7 +23,9 @@ import { OrderChartComponent } from './order-chart/order-chart.component';
 import { BlogComponent } from './blog/blog.component';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 import { SingleBlogComponent } from './single-blog/single-blog.component';
-
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { RazorpayTransactionsComponent } from './razorpay-transactions/razorpay-transactions.component';
+import { BlogTableComponent } from './blog-table/blog-table.component';
 
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
@@ -48,10 +50,11 @@ const routes: Routes = [
   { path:'blogs', component: BlogComponent},
   { path: 'allblogs', component: AllBlogsComponent },
   { path: 'blog/:id', component: SingleBlogComponent },
-  { path: 'service/:id', component: SinglePlumberComponent}
+  { path: 'service/:id', component: SinglePlumberComponent},
+  { path: 'update',component: UpdateProfileComponent},
+  { path: 'razorpay', component: RazorpayTransactionsComponent},
+  { path: 'admin-blogs', component: BlogTableComponent}
   
-
-
 ];
 
 @NgModule({

@@ -1,0 +1,22 @@
+<h2>My Razorpay Transactions</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Transaction ID</th>
+      <th>Amount</th>
+      <th>Status</th>
+      <th>Payment Method</th>
+      <th>Created At</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaction of transactions">
+      <td>{{ transaction.id }}</td>
+      <td>{{ transaction.amount / 100 }}</td>
+      <td>{{ transaction.status }}</td>
+      <td>{{ transaction.method }}</td>
+      <td>{{ transaction.created_at | date: 'short' }}</td>
+    </tr>
+  </tbody>
+</table>

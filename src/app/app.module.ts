@@ -49,6 +49,10 @@ import { MatCardModule } from '@angular/material/card';
 import { BloggingService } from './blogging.service';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 import { SingleBlogComponent } from './single-blog/single-blog.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { RazorpayTransactionsComponent } from './razorpay-transactions/razorpay-transactions.component';
+import { BlogTableComponent } from './blog-table/blog-table.component';
+import { AllBlogService } from './all-blog.service';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -78,7 +82,10 @@ import { SingleBlogComponent } from './single-blog/single-blog.component';
     OrderChartComponent,
     BlogComponent,
     AllBlogsComponent,
-    SingleBlogComponent
+    SingleBlogComponent,
+    UpdateProfileComponent,
+    RazorpayTransactionsComponent,
+    BlogTableComponent
   ],
   imports: [
     // CarouselModule.forRoot(),
@@ -113,6 +120,7 @@ import { SingleBlogComponent } from './single-blog/single-blog.component';
     WorkerTableService,
     OrderTableService,
     BloggingService,
+    AllBlogService,
     HttpClientModule 
   ],
   bootstrap: [AppComponent]
