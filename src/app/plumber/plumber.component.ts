@@ -31,6 +31,22 @@ export class PlumberComponent implements OnInit {
     );
     this.applySort();
   }
+  lat: any;
+  lon: any;
+  getNearByWorker(){
+    navigator.geolocation.getCurrentPosition((position) => {
+        console.log("Latitude: " + position.coords.latitude +
+                    "Longitude: " + position.coords.longitude);
+        this.lat = position.coords.latitude;
+        this.lon = position.coords.longitude;
+
+       });  
+     this.allService.getLocation(this.lat,this.lon,"Plumber").subscribe(users => {
+      this.workerData = users;
+      this.filteredWorkerData = users;
+      console.log("nearby all worker", this.workerData);
+    });
+  }
 
   applySort() {
     if (this.sortBy === 'rating') {
@@ -39,8 +55,7 @@ export class PlumberComponent implements OnInit {
       // You can implement sorting by review here
       console.log('Sorting by review is not implemented yet.');
     } else if (this.sortBy === 'distance') {
-      // You can implement sorting by distance here
-      console.log('Sorting by distance is not implemented yet.');
+      this.getNearByWorker();
     }
   }
 }
