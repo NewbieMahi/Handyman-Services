@@ -47,17 +47,17 @@
     </div>
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">Submit a Review</h5>
-          <form id="review-form" method="post" action="/submit-review">
-            <div class="form-group">
-              <label for="review">Review:</label>
-              <textarea class="form-control" id="review" name="review" rows="3"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-        </div>
+  <div class="card-body">
+    <h5 class="card-title">Submit a Review</h5>
+    <form id="review-form" (ngSubmit)="submitReview()" #reviewForm="ngForm">
+      <div class="form-group">
+        <label for="review">Review:</label>
+        <textarea class="form-control" id="review" name="review" rows="3" [(ngModel)]="reviewText" required></textarea>
       </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!reviewForm.valid">Submit</button>
+    </form>
+  </div>
+</div>
       <div class="card mb-4 shadow-sm">
         <div class="card-body">
           <h5 class="card-title">Rate this Worker</h5>

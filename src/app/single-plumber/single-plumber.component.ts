@@ -43,11 +43,17 @@ export class SinglePlumberComponent implements OnInit {
   
   this.workerService.submitRating(workerId, rating).subscribe((data: any) => {
     this.plumber.averageRating = data.averageRating;
-    alert(data.message);
+    // alert(data.message);
   });
   }
   
-
-
+  submitReview() {
+    const workerId = this.plumber.workerId;
+    const reviewText = this.reviewText;
+    this.workerService.submitReview(workerId, reviewText).subscribe((response: any) => {
+      this.plumber.review.push(reviewText);
+      this.reviewText = '';
+    });
+}
 }
 
