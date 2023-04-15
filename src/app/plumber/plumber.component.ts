@@ -21,6 +21,7 @@ export class PlumberComponent implements OnInit {
       this.filteredWorkerData = users;
       this.applySort();
     });
+
   }
 
   applyFilter(): void {
@@ -48,12 +49,20 @@ export class PlumberComponent implements OnInit {
     });
   }
 
+  getWorkerByReview(){
+      this.allService.getWorkerByReview('Plumber').subscribe(users => {
+        this.workerData = users;
+        this.filteredWorkerData = users;
+        console.log("sentiment analysis sorted all worker", this.workerData);
+      });
+  }
+
+
   applySort() {
     if (this.sortBy === 'rating') {
       this.filteredWorkerData.sort((a: any, b: any) => b.averageRating - a.averageRating);
     } else if (this.sortBy === 'review') {
-      // You can implement sorting by review here
-      console.log('Sorting by review is not implemented yet.');
+      this.getWorkerByReview();
     } else if (this.sortBy === 'distance') {
       this.getNearByWorker();
     }
