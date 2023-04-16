@@ -42,6 +42,13 @@ export class ShippingFormComponent {
   private router: Router 
   ) { }
 
+  shareOnFacebook() {
+    let url = "https://www.facebook.com/sharer/sharer.php?u=http://www.handyman-service-karad.com&picture=https://tse3.mm.bing.net/th?id=OIP.Pw63yqOBb_1sWaz2eOK5HQHaEK&pid=Api&P=0&hashtag=handyman";
+    window.open(url, "_blank");
+  }
+
+  
+
   saveOrder(){
 
   const formData = this.signin.value;
@@ -92,9 +99,12 @@ export class ShippingFormComponent {
         "order_id": this.orderId,
         "handler": (response:any) => {
           this.isBooked = true;
-          console.log(response);
-          alert("This step of Payment Succeeded! Book more service here.");
-          this.sendOTP();
+          
+          // alert("This step of Payment Succeeded! Book more service here.");
+          // this.sendOTP();
+          this.router.navigate(['/payment-success']);
+          // window.location.reload();
+          this.shareOnFacebook();
           // this.router.navigate(['/service-component']);
           // this.router.navigate(['service-component']);
 

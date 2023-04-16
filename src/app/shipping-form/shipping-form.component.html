@@ -1,5 +1,5 @@
-<div class="container">
-  <form [formGroup]="signin">
+<div class="container" *ngIf="!isBooked">
+  <form [formGroup]="signin" >
     <h2>Shipping Info</h2>
 
     <mat-form-field>
@@ -25,6 +25,8 @@
     <button type="submit" (click)="saveOrder()" id="pay-button">Make Payment</button>
   </form>
 </div>
+
+
 
 <!-- <div *ngIf="isBooked; else paymentError">
   <h2>Booking Confirmation</h2>

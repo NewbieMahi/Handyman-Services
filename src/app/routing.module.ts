@@ -27,6 +27,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 import { RazorpayTransactionsComponent } from './razorpay-transactions/razorpay-transactions.component';
 import { BlogTableComponent } from './blog-table/blog-table.component';
 import { PredictiveMaintanceComponent } from './predictive-maintance/predictive-maintance.component';
+import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
   { path: 'user-register', component: UserRegisterComponent },
@@ -55,6 +56,7 @@ const routes: Routes = [
   { path: 'razorpay', component: RazorpayTransactionsComponent},
   { path: 'admin-blogs', component: BlogTableComponent},
   { path: 'predict-maintance', component: PredictiveMaintanceComponent},
+  {path: 'payment-success', component: PaymentSuccessComponent},
   { path: '**', redirectTo: '' }
   
 ];
