@@ -101,7 +101,7 @@ export class ShippingFormComponent {
           this.isBooked = true;
           
           // alert("This step of Payment Succeeded! Book more service here.");
-          // this.sendOTP();
+          this.sendOTP();
           this.router.navigate(['/payment-success']);
           // window.location.reload();
           this.shareOnFacebook();
