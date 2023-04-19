@@ -1,0 +1,17 @@
+<div class="faq-container">
+    <h1 class="faq-header">Frequently Asked Questions</h1>
+  
+    <div *ngFor="let faq of faqs" class="faq-item">
+      <div class="faq-question" (click)="faq.show = !faq.show">
+        {{ faq.question }}
+        <i class="fas fa-chevron-down" [ngClass]="{'rotate': faq.show}"></i>
+      </div>
+      <div class="faq-answer" [ngClass]="{'show': faq.show}">
+        {{ faq.answer }}
+      </div>
+      <div class="faq-divider"></div>
+    </div>
+  
+    <a class="faq-home-link" routerLink="/">Back to Home</a>
+  </div>
+  

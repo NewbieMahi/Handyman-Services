@@ -54,6 +54,7 @@ import { BlogTableComponent } from './blog-table/blog-table.component';
 import { AllBlogService } from './all-blog.service';
 import { PredictiveMaintanceComponent } from './predictive-maintance/predictive-maintance.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
+import { FaqComponent } from './faq/faq.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -87,7 +88,8 @@ import { PaymentSuccessComponent } from './payment-success/payment-success.compo
     RazorpayTransactionsComponent,
     BlogTableComponent,
     PredictiveMaintanceComponent,
-    PaymentSuccessComponent
+    PaymentSuccessComponent,
+    FaqComponent
   ],
   imports: [
     // CarouselModule.forRoot(),
