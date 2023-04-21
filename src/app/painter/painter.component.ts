@@ -64,6 +64,8 @@ export class PainterComponent implements OnInit {
         this.getWorkerByReview();
     } else if (this.sortBy === 'distance') {
        this.getNearByWorker();
+    } else if (this.sortBy === 'price') {
+      this.filteredWorkerData.sort((a: any, b: any) => a.price - b.price);
     }
   }
   
