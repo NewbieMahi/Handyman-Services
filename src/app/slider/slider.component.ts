@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { FaqComponent } from '../faq/faq.component';
 @Component({
   selector: 'app-slider',
   templateUrl: './slider.component.html',
