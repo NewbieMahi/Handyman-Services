@@ -48,13 +48,13 @@ import { MatCardModule } from '@angular/material/card';
 import { BloggingService } from './blogging.service';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 import { SingleBlogComponent } from './single-blog/single-blog.component';
-import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { RazorpayTransactionsComponent } from './razorpay-transactions/razorpay-transactions.component';
 import { BlogTableComponent } from './blog-table/blog-table.component';
 import { AllBlogService } from './all-blog.service';
 import { PredictiveMaintanceComponent } from './predictive-maintance/predictive-maintance.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { FaqComponent } from './faq/faq.component';
+import { UpdateProfileComponent} from './update-profile/update-profile.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -84,12 +84,12 @@ import { FaqComponent } from './faq/faq.component';
     BlogComponent,
     AllBlogsComponent,
     SingleBlogComponent,
-    UpdateProfileComponent,
     RazorpayTransactionsComponent,
     BlogTableComponent,
     PredictiveMaintanceComponent,
     PaymentSuccessComponent,
-    FaqComponent
+    FaqComponent,
+    UpdateProfileComponent
   ],
   imports: [
     // CarouselModule.forRoot(),

@@ -14,6 +14,9 @@ export class WorkerChartService {
   getWorkerById(id:string){
     return this.http.get(`http://localhost:5000/workers/${id}`);
   }
+  updateWorkerById(id:string, data:any){
+    return this.http.put(`http://localhost:5000/workers/${id}`,data);
+  }
   submitRating(workerId:string, rating:string){
     const data = {
       workerId:workerId,

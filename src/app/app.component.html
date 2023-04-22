@@ -22,7 +22,7 @@
   <ng-container *ngIf="currentUser">
     <span class="toolbar-item"  [matMenuTriggerFor]="menu">Welcome {{name}}!</span>
     <mat-menu #menu="matMenu">
-      <a routerLink='/update-profile' mat-menu-item>Update Profile</a>
+      <a routerLink='/update' mat-menu-item>Update Profile</a>
     </mat-menu>
     <a routerLink='/login' class="toolbar-item toolbar-button" (click)="logout()">Logout</a>
   </ng-container>

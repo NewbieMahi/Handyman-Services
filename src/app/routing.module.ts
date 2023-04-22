@@ -23,12 +23,13 @@ import { OrderChartComponent } from './order-chart/order-chart.component';
 import { BlogComponent } from './blog/blog.component';
 import { AllBlogsComponent } from './all-blogs/all-blogs.component';
 import { SingleBlogComponent } from './single-blog/single-blog.component';
-import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { RazorpayTransactionsComponent } from './razorpay-transactions/razorpay-transactions.component';
 import { BlogTableComponent } from './blog-table/blog-table.component';
 import { PredictiveMaintanceComponent } from './predictive-maintance/predictive-maintance.component';
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { FaqComponent } from './faq/faq.component';
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
+
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
   { path: 'user-register', component: UserRegisterComponent },
@@ -53,12 +54,12 @@ const routes: Routes = [
   { path: 'allblogs', component: AllBlogsComponent },
   { path: 'blog/:id', component: SingleBlogComponent },
   { path: 'service/:id', component: SinglePlumberComponent},
-  { path: 'update',component: UpdateProfileComponent},
   { path: 'razorpay', component: RazorpayTransactionsComponent},
   { path: 'admin-blogs', component: BlogTableComponent},
   { path: 'predict-maintance', component: PredictiveMaintanceComponent},
   { path: 'payment-success', component: PaymentSuccessComponent},
   { path: 'faq', component : FaqComponent},
+  { path: 'update', component: UpdateProfileComponent },
   { path: '**', redirectTo: '' }
   
 ];
