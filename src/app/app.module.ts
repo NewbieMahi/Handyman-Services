@@ -55,6 +55,7 @@ import { PredictiveMaintanceComponent } from './predictive-maintance/predictive-
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { FaqComponent } from './faq/faq.component';
 import { UpdateProfileComponent} from './update-profile/update-profile.component';
+import { UpdateSuccessComponent } from './update-success/update-success.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -89,7 +90,8 @@ import { UpdateProfileComponent} from './update-profile/update-profile.component
     PredictiveMaintanceComponent,
     PaymentSuccessComponent,
     FaqComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    UpdateSuccessComponent
   ],
   imports: [
     // CarouselModule.forRoot(),

@@ -48,6 +48,7 @@ export class UpdateProfileComponent implements OnInit {
       price: ['', Validators.required],
       services: [[]],
     });
+    
 
     this.workerService.getWorkerById(this.workerId).subscribe((worker: any) => {
       this.updateWorkerForm.patchValue(worker);
@@ -59,6 +60,8 @@ export class UpdateProfileComponent implements OnInit {
     this.workerService.updateWorkerById(this.workerId, updatedWorker).subscribe(() => {
       // console.log("Updation success");
       this.showSuccessMessage = true;
+      this.updateWorkerForm.reset();
+      this.router.navigate(['/update-success']);
     },error => {
       this.errorMessage = 'Error while updating the profile';
     });

@@ -29,6 +29,7 @@ import { PredictiveMaintanceComponent } from './predictive-maintance/predictive-
 import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 import { FaqComponent } from './faq/faq.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { UpdateSuccessComponent } from './update-success/update-success.component';
 
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
@@ -60,6 +61,7 @@ const routes: Routes = [
   { path: 'payment-success', component: PaymentSuccessComponent},
   { path: 'faq', component : FaqComponent},
   { path: 'update', component: UpdateProfileComponent },
+  { path : 'update-success', component: UpdateSuccessComponent},
   { path: '**', redirectTo: '' }
   
 ];
