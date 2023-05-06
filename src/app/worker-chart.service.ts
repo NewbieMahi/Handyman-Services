@@ -31,5 +31,12 @@ export class WorkerChartService {
      }
      return this.http.post('http://localhost:5000/add-review',data);
   }
+  submitComplaint(workerId:string, reviewText:string){
+    const data = {
+     workerId : workerId,
+     reviewText : reviewText
+    }
+    return this.http.post('http://localhost:5000/add-complaints',data);
+ }
 }
 

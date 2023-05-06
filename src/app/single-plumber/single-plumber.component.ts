@@ -9,7 +9,9 @@ import { WorkerChartService } from '../worker-chart.service';
 export class SinglePlumberComponent implements OnInit {
   plumber: any = {}; // object to store plumber data
   reviewText: string = ''; // variable to store user's review
+  complaintText : string = '';
   rating: any ; // variable to store user's rating
+  showComplaintForm = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -55,5 +57,16 @@ export class SinglePlumberComponent implements OnInit {
       this.reviewText = '';
     });
 }
+
+
+submitComplaint() {
+  const workerId = this.plumber.workerId;
+  const reviewText = this.complaintText;
+  this.workerService.submitComplaint(workerId, reviewText).subscribe((response: any) => {
+    this.plumber.complaints.push(reviewText);
+    this.complaintText = '';
+  });
+}
+
 }
 
