@@ -56,6 +56,13 @@ export class PlumberComponent implements OnInit {
         console.log("sentiment analysis sorted all worker", this.workerData);
       });
   }
+  getWorkerByComplaints(){
+     this.allService.getWorkerByComplaints('Plumber').subscribe(users => {
+      this.workerData = users;
+      this.filteredWorkerData = users;
+      console.log("complaints categories sorted all worker", this.workerData);
+    });
+  }
 
 
   applySort() {
@@ -65,7 +72,9 @@ export class PlumberComponent implements OnInit {
       this.getWorkerByReview();
     } else if (this.sortBy === 'distance') {
       this.getNearByWorker();
-    } else if (this.sortBy === 'price') {
+    }else if (this.sortBy === 'complaints') {
+      this.getWorkerByComplaints();
+    }else if (this.sortBy === 'price') {
       this.filteredWorkerData.sort((a: any, b: any) => a.price - b.price);
     }
   }

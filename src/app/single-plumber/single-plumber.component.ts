@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WorkerChartService } from '../worker-chart.service';
+
 @Component({
   selector: 'app-single-plumber',
   templateUrl: './single-plumber.component.html',
@@ -12,6 +13,7 @@ export class SinglePlumberComponent implements OnInit {
   complaintText : string = '';
   rating: any ; // variable to store user's rating
   showComplaintForm = false;
+  complaintSubmitted = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -65,6 +67,7 @@ submitComplaint() {
   this.workerService.submitComplaint(workerId, reviewText).subscribe((response: any) => {
     this.plumber.complaints.push(reviewText);
     this.complaintText = '';
+    this.complaintSubmitted = true;
   });
 }
 

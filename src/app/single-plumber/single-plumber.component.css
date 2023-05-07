@@ -2,13 +2,15 @@
   max-width: 1200px;
   margin: 0 auto;
   margin-top: 50px;
+
   /* border: 2px solid black; */
 }
 
 .card {
   border: none;
   background-color: #fff;
-  border-radius: 10px;
+  border: 2px solid #eee; /* light gray border */
+  border-radius: 0.25rem;
   box-shadow: 0 25px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
@@ -17,8 +19,11 @@
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.card-img-top:hover {
+.card-img-top{
   transform: scale(0.9);
+}
+.card-img-top:hover {
+  transform: scale(1);
   transition: all 0.2s ease;
 }
 .card:hover {
@@ -103,3 +108,25 @@ select.form-control {
 .book-button:hover{
   background-color:blue;
 }
+.complaint-form button[type=submit] {
+  background-color: #1E90FF;
+  color: #FFFFFF;
+  border: none;
+  margin-top: 10px;
+}
+
+.complaint-form button[type=submit]:hover {
+  background-color: #1877CB;
+  color: #FFFFFF;
+  border: none;
+}
+
+.complaint-form button[type=submit]:disabled {
+  background-color: #B0C4DE;
+  color: #FFFFFF;
+  border: none;
+}
+
+
+
+

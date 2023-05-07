@@ -29,7 +29,7 @@
     "@types/googlemaps": "^3.43.3",
     "angular-material": "^1.2.5",
     "bootstrap": "^5.2.0",
-    "chart.js": "^4.2.1",
+    "chart.js": "^4.3.0",
     "jquery": "^3.6.4",
     "ngx-bootstrap": "^10.2.0",
     "ngx-slick-carousel": "^15.0.0",

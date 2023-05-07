@@ -29,5 +29,11 @@ export class AllServiceService {
     console.log(params);
     return this.http.get('http://localhost:5000/api/sentimentworkers', { params: params });
   }
+  getWorkerByComplaints(service: string){
+    const params = new HttpParams()
+    .set('service',service);
+    console.log(params);
+    return this.http.get('http://localhost:5000/api/categorizeComplaint', { params: params });
+  }
  
 }
