@@ -1,6 +1,10 @@
 <div class="blog-details">
   <img src="../../assets/img/homeservice.jpg" alt="blog-detail-image">
-  <h2 class="blog-title">{{ blog.title }}</h2>
-  <p class="blog-meta">By {{ blog.author }} on {{ blog.date | date:'dd/MM/yyyy hh:mm a' }}</p>
+  <div class="blog-info">
+    <h2 class="blog-title">{{ blog.title }}</h2>
+    <p class="blog-meta">By {{ blog.author }} on {{ blog.date | date:'dd/MM/yyyy hh:mm a' }}</p>
+  </div>
+  <button class="microphone-btn" (click)="startListening()" *ngIf="!listening"><i class="fa fa-microphone"></i></button>
+  <button class="microphone-btn" (click)="stopListening()" *ngIf="listening"><i class="fa fa-stop"></i></button>
   <p class="blog-description">{{ blog.description }}</p>
 </div>
