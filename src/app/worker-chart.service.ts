@@ -42,5 +42,15 @@ export class WorkerChartService {
     }
     return this.http.post('http://localhost:5000/add-complaints',data);
  }
+ saveBooking( userId:string, workerId:string, mobileNumber:string, name:string, address:string){
+   const data = {
+    userId : userId, 
+    workerId : workerId, 
+    mobileNumber : mobileNumber,
+    name : name,
+    address : address 
+   }
+   return this.http.post('http://localhost:5000/api/booking',data);
+ }
 }
 

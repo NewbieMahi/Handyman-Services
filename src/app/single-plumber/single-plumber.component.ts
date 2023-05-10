@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WorkerChartService } from '../worker-chart.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-single-plumber',
@@ -16,6 +18,7 @@ export class SinglePlumberComponent implements OnInit {
   complaintSubmitted = false;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private workerService: WorkerChartService
   ) { }

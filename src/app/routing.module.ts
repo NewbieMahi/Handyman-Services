@@ -51,7 +51,7 @@ const routes: Routes = [
   { path: 'all-users', component: UserTableComponent},
   {path:'all-workers', component: WorkerTableComponent},
   { path:'google-map',component:GoogleMapComponent},
-  { path:'shipping-info', component: ShippingFormComponent},
+  { path:'shipping-info/:id', component: ShippingFormComponent},
   { path:'admin-view',component: AdminViewComponent },
   { path:'all-orders', component: OrderChartComponent},
   { path:'blogs', component: BlogComponent},

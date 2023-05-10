@@ -2,6 +2,9 @@ import { Component, forwardRef, Inject } from '@angular/core';
 import { ShippingInfoService } from '../shipping-info.service';
 import { ErrorStateMatcher } from '@angular/material/core';
 import { PaymentService } from '../payment.service';
+import { AuthService } from '../auth.service';
+import { ActivatedRoute } from '@angular/router';
+import { WorkerChartService } from '../worker-chart.service';
 import { FormControl, FormGroup, FormGroupDirective, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 declare var Razorpay: any;
@@ -19,13 +22,15 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
   styleUrls: ['./shipping-form.component.css']
 })
 export class ShippingFormComponent {
+  plumber: any = {};
   orderId: any;
   name: string ='';
   mobileNumber: string ='';
   address: string ='';
   pincode: string ='';
-
+  currentUser: any;
   isBooked = false; 
+  // workerIId = any;
 
 
   matcher = new MyErrorStateMatcher();
@@ -39,13 +44,16 @@ export class ShippingFormComponent {
  
   constructor(@Inject(forwardRef(() => ShippingInfoService)) private ShippingInfoService: ShippingInfoService,
   private paymentService: PaymentService,
-  private router: Router 
+  private router: Router,
+  private route: ActivatedRoute,
+  private authService: AuthService,
+  private workerService: WorkerChartService
   ) { }
 
-  shareOnFacebook() {
-    let url = "https://www.facebook.com/sharer/sharer.php?u=http://www.handyman-service-karad.com&picture=https://tse3.mm.bing.net/th?id=OIP.Pw63yqOBb_1sWaz2eOK5HQHaEK&pid=Api&P=0&hashtag=handyman";
-    window.open(url, "_blank");
-  }
+  // shareOnFacebook() {
+  //   let url = "https://www.facebook.com/sharer/sharer.php?u=http://www.handyman-service-karad.com&picture=https://tse3.mm.bing.net/th?id=OIP.Pw63yqOBb_1sWaz2eOK5HQHaEK&pid=Api&P=0&hashtag=handyman";
+  //   window.open(url, "_blank");
+  // }
 
   
 
@@ -87,6 +95,14 @@ export class ShippingFormComponent {
         }
       );
     }
+    BookOrder(){
+      const formData = this.signin.value;
+      let workerId:any;
+      workerId = this.route.snapshot.paramMap.get('id');
+      this.workerService.saveBooking(this.currentUser.id, workerId, formData.mobileNumber, formData.name, formData.address).subscribe((data: any) => {
+         console.log("successfully saved booking");
+      });
+    }
 
     setupRazorpay() {
       const options = {
@@ -101,10 +117,11 @@ export class ShippingFormComponent {
           this.isBooked = true;
           
           // alert("This step of Payment Succeeded! Book more service here.");
-          this.sendOTP();
+          // this.sendOTP();
+          this.BookOrder();
           this.router.navigate(['/payment-success']);
           // window.location.reload();
-          this.shareOnFacebook();
+          // this.shareOnFacebook();
           // this.router.navigate(['/service-component']);
           // this.router.navigate(['service-component']);
 
@@ -136,6 +153,27 @@ export class ShippingFormComponent {
       }
     }
     ngOnInit(): void {
+
+      this.authService.currentUser.subscribe(user => {
+        this.currentUser = user;
+        console.log("check", this.currentUser.id);
+
+      });
+      let workerId:any;
+      workerId = this.route.snapshot.paramMap.get('id');
+      // this.workerIId = workerId;
+      
+      this.workerService.getWorkerById(workerId).subscribe(
+        response => {
+          console.log(response);
+          this.plumber = response;
+          console.log("plumber info in shipping page", this.plumber);
+        },
+        error => {
+          console.log('Error while fetching worker details', error);
+        }
+      );
+      
 
 
     
