@@ -30,7 +30,10 @@ import { PaymentSuccessComponent } from './payment-success/payment-success.compo
 import { FaqComponent } from './faq/faq.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { UpdateSuccessComponent } from './update-success/update-success.component';
-
+import { PendingServicesComponent } from './pending-services/pending-services.component';
+import { CompletedServiceComponent } from './completed-service/completed-service.component';
+import { MyserviceComponent } from './myservice/myservice.component';
+import { AvailableComponent } from './available/available.component';
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
   { path: 'user-register', component: UserRegisterComponent },
@@ -61,7 +64,11 @@ const routes: Routes = [
   { path: 'payment-success', component: PaymentSuccessComponent},
   { path: 'faq', component : FaqComponent},
   { path: 'update', component: UpdateProfileComponent },
-  { path : 'update-success', component: UpdateSuccessComponent},
+  { path: 'update-success', component: UpdateSuccessComponent},
+  { path: 'pending-services', component: PendingServicesComponent},
+  { path: 'completed-services', component: CompletedServiceComponent},
+  { path: 'available', component: AvailableComponent},
+  { path: 'my-services',component: MyserviceComponent},
   { path: '**', redirectTo: '' }
   
 ];

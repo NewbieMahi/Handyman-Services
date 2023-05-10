@@ -17,6 +17,10 @@ export class WorkerChartService {
   updateWorkerById(id:string, data:any){
     return this.http.put(`http://localhost:5000/workers/${id}`,data);
   }
+  updateWorkerAvailability(id:string, data:any){
+   
+    return this.http.put(`http://localhost:5000/availability/${id}`,data);
+  }
   submitRating(workerId:string, rating:string){
     const data = {
       workerId:workerId,

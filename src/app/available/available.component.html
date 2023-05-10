@@ -1,0 +1,15 @@
+<div class="worker-availability-container">
+    <div class="worker-availability" (click)="updateAvailability()">
+      <h3>Worker Availability</h3>
+      <p>Is the worker currently available?</p>
+      <label>
+        <input type="radio" name="availability" value="true" [(ngModel)]="isAvailable">
+        <span>Not Available</span>
+      </label>
+      <label>
+        <input type="radio" name="availability" value="false" [(ngModel)]="isAvailable">
+        <span> available</span>
+      </label>
+    </div>
+  </div>
+  

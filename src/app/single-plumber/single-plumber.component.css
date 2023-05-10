@@ -5,6 +5,14 @@
 
   /* border: 2px solid black; */
 }
+.card-text.availability-true {
+  color: darkgreen;
+}
+
+.card-text.availability-false {
+  color: red;
+}
+
 
 .card {
   border: none;

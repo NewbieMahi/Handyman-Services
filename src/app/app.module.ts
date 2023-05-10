@@ -56,6 +56,10 @@ import { PaymentSuccessComponent } from './payment-success/payment-success.compo
 import { FaqComponent } from './faq/faq.component';
 import { UpdateProfileComponent} from './update-profile/update-profile.component';
 import { UpdateSuccessComponent } from './update-success/update-success.component';
+import { PendingServicesComponent } from './pending-services/pending-services.component';
+import { CompletedServiceComponent } from './completed-service/completed-service.component';
+import { MyserviceComponent } from './myservice/myservice.component';
+import { AvailableComponent } from './available/available.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -91,7 +95,11 @@ import { UpdateSuccessComponent } from './update-success/update-success.componen
     PaymentSuccessComponent,
     FaqComponent,
     UpdateProfileComponent,
-    UpdateSuccessComponent
+    UpdateSuccessComponent,
+    PendingServicesComponent,
+    CompletedServiceComponent,
+    MyserviceComponent,
+    AvailableComponent,
   ],
   imports: [
     // CarouselModule.forRoot(),

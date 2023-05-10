@@ -46,7 +46,9 @@
       <div class="card mb-4 shadow-sm">
         <div class="card-body">
           <h5 class="card-title">Price: {{plumber.price}}₹ /Hr</h5>
-          <p class="card-text">Availability: Available</p>
+          <p class="card-text" [class.availability-true]="plumber.is_available" [class.availability-false]="!plumber.is_available">
+            Availability: {{ plumber.is_available ? 'Available' : 'Not Available' }}
+          </p>
           <p class="card-text">Address: {{plumber.address}} <a href="#" routerLink="/google-map">View on map</a></p>
           <p class="card-text">Phone Number: {{plumber.mobileNumber}}</p>
         </div>
