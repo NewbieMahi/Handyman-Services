@@ -11,19 +11,18 @@ export class AppComponent {
   currentUser: any;
   name: any;
 
- 
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger | undefined;
 
   constructor(private authService: AuthService) {}
 
   title = 'Handyman';
   username: string = '';
+  
   ngOnInit() {
     this.authService.currentUser.subscribe(user => {
       this.currentUser = user;
       console.log("User fetched after login button",user);
       this.name = user.username;
-
     });
 
     //----------- chatbot's code --------------//
@@ -43,7 +42,13 @@ export class AppComponent {
       m._globals = kommunicateSettings;
     })(document, (window as any).kommunicate || {});
     //----------- chatbot's code end --------------//
-
+  }
+  
+  isWorker() {
+    return this.currentUser && this.currentUser.userType === 'worker';
+  }
+  isUser() {
+    return this.currentUser && this.currentUser.userType === 'user';
   }
   
   logout() {

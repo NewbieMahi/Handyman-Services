@@ -2,10 +2,12 @@
   <span id="google_translate_element" class="translate_but"></span>
   <a routerLink='/' class="toolbar-item"> <span>Handyman Services</span></a>
   <span class="example-spacer"></span>
+
+  <a href="http://localhost:3012/" class="toolbar-item" target="_blank">SkillBridge</a>
   
   <a href="http://localhost:3000/" class="toolbar-item" target="_blank">Naukari Mitra</a>
   
-  <a href="https://video.sebastienbiollo.com/room" class="toolbar-item" target="_blank">Online Consult</a>
+  <a href="https://karad1.netlify.app/" class="toolbar-item" target="_blank">Online Consult</a>
   <a routerLink='/allblogs' class="toolbar-item">Blogs</a>
   <a routerLink='/service-component' class="toolbar-item" routerLinkActive="active">Services</a>
 
@@ -17,32 +19,31 @@
     </mat-menu>
     <a routerLink='/login' class="toolbar-item">Login</a>
   </ng-container>
-  
-  
-  
-  <!-- Add logout button -->
+
   <ng-container *ngIf="currentUser">
-    <span class="toolbar-item"  [matMenuTriggerFor]="menu">Welcome {{name}}!</span>
-    <mat-menu #menu="matMenu">
-      <a routerLink='/update' mat-menu-item>Update Profile</a>
-    </mat-menu>
-    <a routerLink='/login' class="toolbar-item toolbar-button" (click)="logout()">Logout</a>
+    <ng-container *ngIf="isWorker()">
+      <span class="toolbar-item"  [matMenuTriggerFor]="menu">Welcome {{name}}!</span>
+      <mat-menu #menu="matMenu">
+        <a routerLink='/update' mat-menu-item>Update Profile</a>
+        <a routerLink='/pending-services' mat-menu-item>Pending Services</a>
+        <a routerLink='/completed-services' mat-menu-item>Completed Services</a>
+        <a routerLink='/all-services' mat-menu-item>All Services</a>
+      </mat-menu>
+    </ng-container>
+    
+    <ng-container *ngIf="isUser()">
+      <span class="toolbar-item"  [matMenuTriggerFor]="menu">Welcome {{name}}!</span>
+      <mat-menu #menu="matMenu">
+        <a routerLink='/user-profile' mat-menu-item>Profile</a>
+        <a routerLink='/service-component' mat-menu-item>Book Service</a>
+        <a routerLink='/my-services' mat-menu-item>My Applied Services</a>
+      </mat-menu>
+    </ng-container>
+
+    <a routerLink='/' class="toolbar-item" (click)="logout()">Logout</a>
   </ng-container>
   
-  
-  
-  
-  <!-- <ng-container *ngIf="currentUser">
-    <a routerLink='/login' class="toolbar-item toolbar-button" (click)="logout()">Logout</a>
-  </ng-container> -->
-
-  <!-- <ng-container *ngIf="currentUser">
-    <span class="toolbar-item">Welcome {{name}}</span>
-  </ng-container> -->
-
-  <!-- <ng-container *ngIf="currentUser">
-    <span class="toolbar-item">Welcome {{name}}! <a routerLink='/update-profile'>Update Profile</a></span>
-  </ng-container> -->
 </mat-toolbar>
+
 
 <router-outlet></router-outlet>
