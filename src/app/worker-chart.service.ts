@@ -69,6 +69,9 @@ completedService(id:string){
 allServices(id:string){
   return this.http.get(`http://localhost:5000/all/${id}`);
 }
+updatePaymentStatus(id: string) {
+  return this.http.put(`http://localhost:5000/payment/status/${id}`, {});
+}
 
 
 }

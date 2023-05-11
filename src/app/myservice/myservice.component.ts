@@ -14,7 +14,8 @@ export class MyserviceComponent implements OnInit {
   bookings: any = [];
   workers: any = [];
   filteredBookings: any = [];
-
+  isServiceCompleted = false;
+  paymentStatus:any;
   searchValue: string = '';
 
   constructor(
@@ -55,8 +56,14 @@ export class MyserviceComponent implements OnInit {
   }
 
   completeService(bookingId: string) {
-    // Update booking status here
-    // Redirect to myservice page
+     this.workerService.updatePaymentStatus(bookingId).subscribe(response => {
+      this.paymentStatus = 'successfull';
+      this.isServiceCompleted = true;
+    
+    },
+    (error) => {
+      console.error(error);
+    });
   }
 
 }

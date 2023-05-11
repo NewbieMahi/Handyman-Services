@@ -14,7 +14,7 @@ export class AllBookingServicesComponent implements OnInit {
   bookings: any = [];
   workers: any = [];
   filteredBookings: any = [];
-
+  isServiceCompleted = true;
   searchValue: string = '';
 
   constructor(

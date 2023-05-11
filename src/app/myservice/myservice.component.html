@@ -31,9 +31,13 @@
           </button>
         </td>
         <td>
-          <button class="btn btn-success complete-service-btn" (click)="completeService(booking._id)">
-            Service Completed
-          </button>
+          <button class="btn" 
+        [ngClass]="{'btn-success': isServiceCompleted, 'btn-secondary': !isServiceCompleted}" 
+        [disabled]="isServiceCompleted"
+        (click)="completeService(booking._id)">
+  {{ isServiceCompleted ? 'Service Completed' : 'Service in Processing...' }}
+</button>
+
         </td>
       </tr>
     </tbody>

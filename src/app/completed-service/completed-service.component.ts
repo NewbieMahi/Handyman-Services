@@ -13,7 +13,7 @@ export class CompletedServiceComponent implements OnInit {
   bookings: any = [];
   workers: any = [];
   filteredBookings: any = [];
-
+  isServiceCompleted = true;
   searchValue: string = '';
 
   constructor(
@@ -53,8 +53,7 @@ export class CompletedServiceComponent implements OnInit {
   
 
   completeService(bookingId: string) {
-    // Update booking status here
-    // Redirect to myservice page
+    
   }
 
 }
