@@ -14,6 +14,10 @@ export class WorkerChartService {
   getWorkerById(id:string){
     return this.http.get(`http://localhost:5000/workers/${id}`);
   }
+  getWorkerByworkerId(id:string){
+    return this.http.get(`http://localhost:5000/work/${id}`);
+  }
+  
   updateWorkerById(id:string, data:any){
     return this.http.put(`http://localhost:5000/workers/${id}`,data);
   }
@@ -52,5 +56,10 @@ export class WorkerChartService {
    }
    return this.http.post('http://localhost:5000/api/booking',data);
  }
+ 
+ myServices(id:string){
+  return this.http.get(`http://localhost:5000/myservices/${id}`);
+ }
+
 }
 
