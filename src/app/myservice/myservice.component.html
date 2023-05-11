@@ -1,1 +1,36 @@
-<p>myservice works!</p>
+<div class="container">
+    <h3 class="text-center mb-5">My Services</h3>
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" />
+      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Date of Booking</th>
+          <th scope="col">Types of Service</th>
+          <th scope="col">Name of Worker</th>
+          <th scope="col">Mobile Number of Worker</th>
+          <th scope="col">Status of Service</th>
+          <th scope="col">View Worker</th>
+          <th scope="col">Service Completed?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let booking of bookings; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ booking.bookingDate | date: 'medium' }}</td>
+          <td>{{ booking.serviceTypes }}</td>
+          <td>{{ booking.workerName }}</td>
+          <td>{{ booking.workerMobileNumber }}</td>
+          <td>{{ booking.paymentStatus }}</td>
+          <td><button class="btn btn-link">View Worker</button></td>
+          <td><button class="btn btn-link">Service Completed?</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
