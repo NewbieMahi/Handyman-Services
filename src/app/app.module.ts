@@ -60,6 +60,7 @@ import { PendingServicesComponent } from './pending-services/pending-services.co
 import { CompletedServiceComponent } from './completed-service/completed-service.component';
 import { MyserviceComponent } from './myservice/myservice.component';
 import { AvailableComponent } from './available/available.component';
+import { AllBookingServicesComponent } from './all-booking-services/all-booking-services.component';
 // import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 // import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -100,6 +101,7 @@ import { AvailableComponent } from './available/available.component';
     CompletedServiceComponent,
     MyserviceComponent,
     AvailableComponent,
+    AllBookingServicesComponent,
   ],
   imports: [
     // CarouselModule.forRoot(),

@@ -34,6 +34,7 @@ import { PendingServicesComponent } from './pending-services/pending-services.co
 import { CompletedServiceComponent } from './completed-service/completed-service.component';
 import { MyserviceComponent } from './myservice/myservice.component';
 import { AvailableComponent } from './available/available.component';
+import { AllBookingServicesComponent } from './all-booking-services/all-booking-services.component';
 const routes: Routes = [
   { path: 'service-component', component: ServicesComponent },
   { path: 'user-register', component: UserRegisterComponent },
@@ -69,6 +70,7 @@ const routes: Routes = [
   { path: 'completed-services', component: CompletedServiceComponent},
   { path: 'available', component: AvailableComponent},
   { path: 'my-services',component: MyserviceComponent},
+  { path: 'all-services',component: AllBookingServicesComponent},
   { path: '**', redirectTo: '' }
   
 ];

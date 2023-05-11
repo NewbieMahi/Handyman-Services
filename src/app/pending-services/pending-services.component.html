@@ -1,1 +1,37 @@
-<p>pending-services works!</p>
+<div class="input-group mb-3 search-bar">
+    <input type="text" class="form-control search-input" placeholder="Search by worker name" [(ngModel)]="searchValue">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary search-btn" type="button" (click)="search()">Search</button>
+    </div>
+  </div>
+<table class="table table-bordered my-service-table">
+    <thead>
+      <tr>
+        <th>Serial No.</th>
+        <th>Date of Booking</th>
+        <th>Name of User</th>
+        <th>Address</th>
+        <th>Mobile Number of Worker</th>
+        <th>Status of Service</th>
+        <th>Service Completed?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of filteredBookings; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{booking.bookingDate | date:'yyyy-MM-dd'}}</td>
+        <td>{{booking.name}}</td>
+        <td>{{booking.address}}</td>
+        <td>{{booking.mobileNumber}}</td>
+        <td>{{booking.paymentStatus}}</td>
+        <td>
+          <button class="btn btn-success complete-service-btn" (click)="completeService(booking._id)">
+            Service Completed
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+ 
+  

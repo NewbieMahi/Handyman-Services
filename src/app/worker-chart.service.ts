@@ -60,6 +60,16 @@ export class WorkerChartService {
  myServices(id:string){
   return this.http.get(`http://localhost:5000/myservices/${id}`);
  }
+ pendingService(id:string){
+  return this.http.get(`http://localhost:5000/pending/${id}`);
+}
+completedService(id:string){
+  return this.http.get(`http://localhost:5000/completed/${id}`);
+}
+allServices(id:string){
+  return this.http.get(`http://localhost:5000/all/${id}`);
+}
+
 
 }
 

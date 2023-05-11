@@ -4,11 +4,11 @@ import { AuthService } from '../auth.service';
 import { WorkerChartService } from '../worker-chart.service';
 
 @Component({
-  selector: 'app-pending-services',
-  templateUrl: './pending-services.component.html',
-  styleUrls: ['./pending-services.component.css']
+  selector: 'app-all-booking-services',
+  templateUrl: './all-booking-services.component.html',
+  styleUrls: ['./all-booking-services.component.css']
 })
-export class PendingServicesComponent implements OnInit {
+export class AllBookingServicesComponent implements OnInit {
 
   currentUser: any;
   bookings: any = [];
@@ -26,10 +26,9 @@ export class PendingServicesComponent implements OnInit {
   ngOnInit(): void {
     this.authService.currentUser.subscribe(user => {
       this.currentUser = user;
-      
     });
 
-    this.workerService.pendingService(this.currentUser.workerId).subscribe((data: any) => {
+    this.workerService.allServices(this.currentUser.workerId).subscribe((data: any) => {
       this.bookings = data;
       this.filteredBookings = data;
       // for (const booking of this.bookings) {
